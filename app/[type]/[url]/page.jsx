@@ -42,10 +42,6 @@ async function getCountries(countries) {
     return res.json()
   }
 
-  export const metadata = {
-    title: '',
-    description: 'Dzięki stronie Filmersi znajdziesz film lub serial do obejrzenia oraz sprawdzisz gdzie obejrzeć go online.',
-  }
 
   export async function generateMetadata({params}) {
     var movieInfo = await getMovieInfo(params.url)
