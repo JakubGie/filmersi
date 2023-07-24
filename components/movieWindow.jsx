@@ -2,13 +2,13 @@ import Link from "next/link"
 
 const MovieWindow = (props) => {
     return (
-        <div className="min-h-[300px] flex rounded-xl relative overflow-hidden">
+        <div className="h-[300px] overflow-hidden flex rounded-xl relative overflow-hidden">
             <div className="bg-red w-full h-full">
                 {props.imageBg !== "" ?  <img src={props.imageBg.replace('original', 'w300')} alt={`${props.tytul} ${props.typ === "Film" ? "cały film" : "wszystkie odcinki" } (tło)`}  layout="fill" objectFit="cover" className="h-full object-cover"/> : <></>}
             </div>
            
            
-            <div class="singleMovie absolute flex w-full shrink-0 h-full p-3 gap-4 md:gap-5">
+            <div class="singleMovie absolute flex w-full shrink-0 h-full p-4 gap-4 md:gap-5">
 
                 <Link href={`/${props.typ === "Film" ? "film" : "serial"}/${props.url}`} className="w-[95px] h-[135px] md:w-[130px] md:h-[195px] rounded-xl overflow-hidden shrink-0  relative content-between bg-none">
                     <img

@@ -4,6 +4,7 @@ import SimilarButton from "@/components/elements/similarButton"
 import DataWindow from "@/components/dataWindow"
 import Image from "next/image"
 import WatchSources from "@/components/watchSources"
+import YtPlayer from "@/components/ytPlayer"
 
 
 import Footer from "@/components/footer"
@@ -92,14 +93,7 @@ export default async function AllParts({params}) {
                         <div className="w-full flex justify-center pt-10">
                           
                             { movieInfo.zwiastun !== "" ? <>
-                                <div className="hidden lg:flex">
-                                    <iframe src={`https://www.youtube.com/embed/${movieInfo.zwiastun}?showinfo=0&controls=0&autoplay=1&start=20`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" className="rounded-2xl w-[600px] h-[250px] lg:h-[300px]" allowfullscreen></iframe>
-                                </div>
-                                <div className="lg:hidden w-full">
-                                    <iframe src={`https://www.youtube.com/embed/${movieInfo.zwiastun}&start=20`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" className="rounded-2xl w-full h-[250px]" allowfullscreen></iframe>
-                                </div>
-                               
-
+                                <YtPlayer id={movieInfo.zwiastun} />
                             </> : <></> }
 
                         </div>

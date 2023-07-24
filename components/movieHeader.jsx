@@ -6,7 +6,7 @@ const MovieHeader = (props) => {
     return (
         <div className="flex my-4 lg:my-8 gap-4 lg:gap-10 flex-col lg:flex-row">
 
-            <Link href={`/${props.movieInfo.typ === "Film" ? "film" : "serial"}/${props.movieInfo.url}`} className={`lg:h-[400px] lg:w-[267px] w-full h-[400px] rounded-xl overflow-hidden  relative ${props.fullVersion ? "flex" : "hidden"}  lg:flex shrink-0`}>
+            <Link href={`/${props.movieInfo.typ === "Film" ? "film" : "serial"}/${props.movieInfo.url}`} className={`lg:h-[400px] lg:w-[267px] w-full h-[400px] rounded-xl overflow-hidden justify-center relative ${props.fullVersion ? "flex" : "hidden"}  lg:flex shrink-0`}>
                 <img
                     alt={`${props.movieInfo.tytul} ${props.movieInfo.typ === "Film" ? "cały film" : "wszystkie odcinki" }`}
                     src={props.movieInfo.plakat.replace('original', 'w342')}

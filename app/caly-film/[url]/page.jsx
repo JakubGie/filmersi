@@ -11,6 +11,7 @@ import MovieWindow from "@/components/movieWindow"
 import WatchProviderWindow from "@/components/watchProviderWindow"
 import Footer from "@/components/footer"
 import WatchSources from "@/components/watchSources"
+import YtPlayer from "@/components/ytPlayer"
 
 async function getMovieInfo(url) {
     const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/movieInfoUrl/'+url)
@@ -128,14 +129,7 @@ export default async function FullMovie({params}) {
                         <div className="w-full flex justify-center pt-10">
                           
                             { movieInfo.zwiastun !== "" ? <>
-                                <div className="hidden lg:flex">
-                                    <iframe src={`https://www.youtube.com/embed/${movieInfo.zwiastun}?showinfo=0&controls=0&autoplay=1&start=20&loop=1&playlist=${movieInfo.zwiastun}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" className="rounded-2xl w-[600px] h-[250px] lg:h-[300px]" allowfullscreen></iframe>
-                                </div>
-                                <div className="lg:hidden w-full">
-                                    <iframe src={`https://www.youtube.com/embed/${movieInfo.zwiastun}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" className="rounded-2xl w-full h-[250px]" allowfullscreen></iframe>
-                                </div>
-                               
-
+                                <YtPlayer id={movieInfo.zwiastun} />
                             </> : <></> }
 
                         </div>
