@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --black: #131313;
+  --white: #e9e9e9;
+}
+
+.navMobile {
+  background-color: #131313e8;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.additional-info h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.additional-info p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+.privacy-policy ul, ol {
+  list-style: revert;
+}
+
+
+.single-link { 
+  @apply text-lg uppercase
+}
+
+.single-link:hover { 
+  @apply text-brand transition
+}
+
+.select {
+  @apply text-lg px-4 py-2 lg:py-1 rounded-full outline-none w-full lg:w-auto
+}
+
+.loading {
+  background: rgba(18, 18, 18, 0.768);
+}
+
+.image-gradient {
+  background: rgb(18,18,18);
+  background: linear-gradient(180deg, rgba(18,18,18,0.29735644257703087) 0%, rgba(19,19,19,1) 100%);
+}
+
+.darker-bg {
+  background-color: #1313137d;
+}
+
+.singleList {
+  background: rgba(18, 18, 18, 0.768);
+}
+
+.singleMovie {
+  background: rgba(18, 18, 18, 0.798);
+}
+
+.lockedList {
+  background: rgba(18, 18, 18, 0.689);
+}
+
+::selection
+{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+
+
+/* Scrollbar */
+
+body::-webkit-scrollbar
+{
+	width: 10px;
+	height: 10px;
+}
+
+body::-webkit-scrollbar-track
+{
+	background-color: var(--black);
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb:hover
+{
+	background-color: #fff;
+}
