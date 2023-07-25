@@ -119,7 +119,7 @@ export default async function sitemap() {
 
 
  
-  const routes = ["", "/filmy", "/seriale", "/listy-tematyczne/filmy", "/aplikacja", "/aplikacja/polityka-prywatnosci", "/losuj/film", "/twoja-lista", "/filmy/temat/na-wieczor", "/filmy/temat/horrory", "/filmy/temat/stare-horrory", "/filmy/temat/polskie", "/filmy/temat/polskie-klasyki", "/filmy/temat/pieniadze", "/filmy/temat/zagadka", "/filmy/temat/wojna", "/filmy/temat/animacje", "/filmy/temat/komediowe", "/filmy/temat/na-faktach", "/filmy/temat/muzyka-hiphop", "/filmy/temat/bokser"].map((route) => ({
+  const routes = ["", "/filmy", "/seriale", "/listy-tematyczne/filmy", "/aplikacja", "/aplikacja/polityka-prywatnosci", "/losuj/serial", "/losuj/film", "/twoja-lista", "/filmy/temat/na-wieczor", "/filmy/temat/horrory", "/filmy/temat/stare-horrory", "/filmy/temat/polskie", "/filmy/temat/polskie-klasyki", "/filmy/temat/pieniadze", "/filmy/temat/zagadka", "/filmy/temat/wojna", "/filmy/temat/animacje", "/filmy/temat/komediowe", "/filmy/temat/na-faktach", "/filmy/temat/muzyka-hiphop", "/filmy/temat/bokser"].map((route) => ({
     url: `${URL}${route}`,
     lastModified: new Date().toISOString()
   }));

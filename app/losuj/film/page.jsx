@@ -31,7 +31,7 @@ const DrawMovie = () => {
                     </div>
 
 
-                    <Draw/>
+                    <Draw typ="Film"/>
 
 
                 </div>

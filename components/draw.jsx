@@ -6,7 +6,7 @@ import MovieWindow from "./movieWindow"
 import Link from "next/link"
 import Image from "next/image"
 
-const Draw = () => {
+const Draw = (params) => {
 
     const [ result, setResult ] = useState()
     const [ loading, setLoading ] = useState()
@@ -14,7 +14,7 @@ const Draw = () => {
     function drawMovie() {
         setResult(undefined)
         setLoading(true)
-        axios.get('https://api.filmer.wkbdhkmuzv.cfolks.pl/randomMovie/Film/nieanimowany/1/true/all/all/0/1/0').then((res) => {
+        axios.get('https://api.filmer.wkbdhkmuzv.cfolks.pl/randomMovie/'+params.typ+'/nieanimowany/1/true/all/all/0/1/0').then((res) => {
             setResult(res.data[0])
             setLoading(false)
         })

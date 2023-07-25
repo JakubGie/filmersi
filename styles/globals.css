@@ -78,6 +78,14 @@ body {
 }
 
 
+/* Mobile */
+
+@media screen and (max-width:768px)
+{
+  .darker-bg {
+    background-color: #131313b4;
+  }
+}
 
 
 /* Scrollbar */

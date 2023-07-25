@@ -50,7 +50,7 @@ const Header = () => {
                                     <Link href="/losuj/film" className='single-link'>Losuj film</Link>
                                 </li>
                                 <li>
-                                    <Link href="/aplikacja" className='single-link'>Losuj serial</Link>
+                                    <Link href="/losuj/serial" className='single-link'>Losuj serial</Link>
                                 </li>
                             </ul>
                         </nav>

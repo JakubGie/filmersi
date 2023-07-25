@@ -30,7 +30,7 @@ const MobileNav = () => {
                                 <Link onClick={() => setNavShown(false)} href="/losuj/film" className="singleMobileLinkNav flex gap-3"><FaRandom/> Losuj film</Link>
                             </li>
                             <li>
-                                <Link onClick={() => setNavShown(false)} href="/aplikacja" className="singleMobileLinkNav flex gap-3"><FaRandom/> Losuj serial</Link>
+                                <Link onClick={() => setNavShown(false)} href="/losuj/serial" className="singleMobileLinkNav flex gap-3"><FaRandom/> Losuj serial</Link>
                             </li>
                             <div className="bg-brand px-4 py-2 rounded-lg  font-bold mt-3">
                                 <li>

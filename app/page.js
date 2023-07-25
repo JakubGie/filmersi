@@ -10,13 +10,13 @@ import MovieWindow from "@/components/movieWindow"
 import Link from "next/link"
 
 async function getTrendingMovies() {
-  const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/trendingMovies')
+  const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/trendingMovies', { cache: 'no-store' })
 
   return res.json()
 }
 
 async function getTrendingMovie() {
-  const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/trendingMovie')
+  const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/trendingMovie', { cache: 'no-store' })
 
   return res.json()
 }
