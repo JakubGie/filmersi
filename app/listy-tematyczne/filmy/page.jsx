@@ -12,7 +12,7 @@ export async function generateMetadata({params}) {
     title: "Listy tematyczne filmów - Znajdź film o każdym temacie",
     description: "Przejrzyj listy tematyczne filmów i znajdź film do obejrzenia online.",
     openGraph: {
-      images: ['/og.png'],
+      images: ['https://filmersi.pl/og.png'],
       title: "Listy tematyczne filmów - Znajdź film o każdym temacie",
       description: "Przejrzyj listy tematyczne filmów i znajdź film do obejrzenia online."
     },

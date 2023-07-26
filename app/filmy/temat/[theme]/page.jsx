@@ -87,6 +87,14 @@ export async function generateMetadata({params}) {
             header = "Bokserskie"
             image = "/lists/bokser.jpg"
             break;
+        case 'wampir':
+            header = "Wampir"
+            image = "/lists/wampir.jpg"
+            break;
+        case 'sredniowiecze':
+            header = "Średniowiecze"
+            image = "/lists/sredniowiecze.jpg"
+            break;
         default:
             header = "Filmy"
     }
@@ -174,6 +182,14 @@ export default async function Theme({params}) {
         case 'bokser':
             header = "Bokserskie"
             image = "/lists/bokser.jpg"
+            break;
+        case 'wampir':
+            header = "Wampir"
+            image = "/lists/wampir.jpg"
+            break;
+        case 'sredniowiecze':
+            header = "Średniowiecze"
+            image = "/lists/sredniowiecze.jpg"
             break;
         default:
             header = "Filmy"

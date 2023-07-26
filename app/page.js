@@ -21,6 +21,17 @@ async function getTrendingMovie() {
   return res.json()
 }
 
+export async function generateMetadata({params}) {
+  return {
+    title: "Filmersi - Znajdź film lub serial do obejrzenia online",
+    description: "Dzięki stronie Filmersi znajdziesz film lub serial do obejrzenia oraz sprawdzisz gdzie obejrzeć go online.",
+    openGraph: {
+      images: ['https://filmersi.pl/og.png'],
+      title: "Filmersi - Znajdź film lub serial do obejrzenia online",
+      description: "Dzięki stronie Filmersi znajdziesz film lub serial do obejrzenia oraz sprawdzisz gdzie obejrzeć go online."
+    },
+  }
+}
 
 export default async function Home() {
   const trendingMovies = await getTrendingMovies()

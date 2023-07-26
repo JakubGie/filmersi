@@ -9,7 +9,7 @@ export async function generateMetadata({params}) {
       title: "Filmer - Aplikacja rekomendująca filmy i seriale",
       description: "Nie wiesz co obejrzeć? Pobierz aplikację Filmer, która pomoże Ci znaleźć idealny film lub serial do obejrzenia. Podobne filmy, losowanie, chronologia oglądania.",
       openGraph: {
-        images: ['/og.png'],
+        images: ['https://filmersi.pl/og.png'],
         title: "Filmer - Aplikacja rekomendująca filmy i seriale",
         description: "Nie wiesz co obejrzeć? Pobierz aplikację Filmer, która pomoże Ci znaleźć idealny film lub serial do obejrzenia. Podobne filmy, losowanie, chronologia oglądania."
       },

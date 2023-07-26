@@ -22,6 +22,10 @@ const Lists = (params) => {
                 <List type="Filmy" nazwa="Kosmos" image="/lists/kosmos.jpg" href="kosmos" locked={true} />
                 <List type="Filmy" nazwa="Hip hop" image="/lists/muzyka-hiphop.jpg" href="muzyka-hiphop" locked={false} />
                 <List type="Filmy" nazwa="Bokserskie" image="/lists/bokser.jpg" href="bokser" locked={false} />
+                <List type="Filmy" nazwa="Więzienie" image="/lists/wiezienie.jpg" href="wiezienie" locked={true} />
+                <List type="Filmy" nazwa="Wampir" image="/lists/wampir.jpg" href="wampir" locked={false} />
+                <List type="Filmy" nazwa="Średniowiecze" image="/lists/sredniowiecze.jpg" href="sredniowiecze" locked={false} />
+                <List type="Filmy" nazwa="Muzyka rockowa" image="/lists/muzyka-rockowa.jpg" href="muzyka-rockowa" locked={true} />
             </> : <>
             <List type="Filmy" nazwa="Na wieczór" image="/lists/na-wieczor.jpg" href="na-wieczor" locked={false} />
                 <List type="Filmy" nazwa="Horrory" image="/lists/horrory.jpg" href="horrory" locked={false} />

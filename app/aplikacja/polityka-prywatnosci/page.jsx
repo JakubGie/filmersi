@@ -8,7 +8,7 @@ export async function generateMetadata({params}) {
       title: "Polityka prywatności aplikacji Filmer",
       description: "Zapoznaj się z polityką prywatności aplikacji mobilnej Filmer.",
       openGraph: {
-        images: ['/og.png'],
+        images: ['https://filmersi.pl/og.png'],
         title: "Polityka prywatności aplikacji Filmer",
         description: "Zapoznaj się z polityką prywatności aplikacji mobilnej Filmer."
       },

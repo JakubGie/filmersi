@@ -6,7 +6,7 @@ export async function generateMetadata({params}) {
       title: "Losowanie filmu - Wylosuj film do obejrzenia online",
       description: "Wylosuj film do obejrzenie z naszej bazy filmów. Po wylosowaniu filmu możesz go obejrzeć online.",
       openGraph: {
-        images: ['/og.png'],
+        images: ['https://filmersi.pl/og.png'],
         title: "Losowanie filmu - Wylosuj film do obejrzenia online",
         description: "Wylosuj film do obejrzenie z naszej bazy filmów. Po wylosowaniu filmu możesz go obejrzeć online."
       },

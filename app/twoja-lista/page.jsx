@@ -8,7 +8,7 @@ export async function generateMetadata({params}) {
       title: "Twoja lista filmów - Dodawaj filmy i seriale do Twojej listy na potem",
       description: "Dodawaj filmy i seriale do twojej własnej listy w naszej darmowej Aplikacji Mobilnej.",
       openGraph: {
-        images: ['/og.png'],
+        images: ['https://filmersi.pl/og.png'],
         title: "Twoja lista filmów - Dodawaj filmy i seriale do Twojej listy na potem",
         description: "Dodawaj filmy i seriale do twojej własnej listy w naszej darmowej Aplikacji Mobilnej."
       },

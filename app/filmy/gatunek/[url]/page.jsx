@@ -6,7 +6,6 @@ import Footer from "@/components/footer"
 
 import MovieWindow from "@/components/movieWindow"
 
-import CheckApp from "@/components/checkApp"
 import HeaderWithText from "@/components/headerWithText"
 
 async function getGenreInfo(url) {

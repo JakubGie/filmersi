@@ -35,7 +35,7 @@ export async function generateMetadata({params}) {
       title: "Wyniki wyszukiwania dla "+q+" - Filmersi",
       description: "Sprawdź wyniki wyszukiwania dla frazy "+q,
       openGraph: {
-        images: ['/og.png'],
+        images: ['https://filmersi.pl/og.png'],
         title: "Wyniki wyszukiwania dla "+q+" - Filmersi",
         description: "Sprawdź wyniki wyszukiwania dla frazy "+q
       },

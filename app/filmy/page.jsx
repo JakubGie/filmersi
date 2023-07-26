@@ -6,7 +6,7 @@ export async function generateMetadata({params}) {
       title: "Co obejrzeć? - Znajdź film do obejrzenia online",
       description: "Filtruj rodzaj, gatunek, kraj produkcji, rok produkcji i inne, aby znaleźć dla siebie film do obejrzenia online.",
       openGraph: {
-        images: ['/og.png'],
+        images: ['https://filmersi.pl/og.png'],
         title: "Co obejrzeć? - Znajdź film do obejrzenia online",
         description: "Filtruj rodzaj, gatunek, kraj produkcji, rok produkcji i inne, aby znaleźć dla siebie film do obejrzenia online."
       },

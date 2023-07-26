@@ -6,7 +6,7 @@ export async function generateMetadata({params}) {
       title: "Losowanie serialu - Wylosuj serial do obejrzenia online",
       description: "Wylosuj serial do obejrzenie z naszej bazy seriali. Po wylosowaniu serialu możesz go obejrzeć online.",
       openGraph: {
-        images: ['/og.png'],
+        images: ['https://filmersi.pl/og.png'],
         title: "Losowanie serialu - Wylosuj serial do obejrzenia online",
         description: "Wylosuj serial do obejrzenie z naszej bazy seriali. Po wylosowaniu serialu możesz go obejrzeć online."
       },
