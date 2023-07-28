@@ -77,6 +77,35 @@ body {
     color: var(--white);
 }
 
+.blog-post {
+  @apply flex flex-col gap-5 py-10 text-lg
+}
+
+.blog-post p.introduction {
+  @apply font-semibold text-lg
+}
+
+.blog-post h2 {
+  @apply text-3xl font-bold
+}
+
+.blog-post img, .blog-post p img {
+  @apply h-[350px] object-cover w-full rounded-xl
+}
+
+.blog-post a:not(.watch-movie) {
+  @apply underline hover:no-underline
+}
+
+.watch-movie {
+  @apply bg-red-600 grow text-white no-underline rounded-lg font-bold px-5 py-2 inline-block uppercase hover:bg-black  transition text-xl
+}
+
+.blog-post ul {
+  @apply list-disc pl-[23px]
+}
+
+
 
 /* Mobile */
 
@@ -84,6 +113,10 @@ body {
 {
   .darker-bg {
     background-color: #131313b4;
+  }
+
+  .blog-post img, .blog-post p img {
+    @apply h-[200px]
   }
 }
 

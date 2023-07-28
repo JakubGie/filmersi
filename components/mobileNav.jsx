@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { FaVideo, FaListOl, FaGuitar, FaRandom, FaTiktok, FaFacebookSquare, FaMobileAlt, FaStar, FaBars, FaTimes } from "react-icons/fa";
+import { FaVideo, FaListOl, FaGuitar, FaRandom, FaTiktok, FaFacebookSquare, FaMobileAlt, FaStar, FaBars, FaTimes, FaFilm, FaParagraph } from "react-icons/fa";
 
 
 const MobileNav = () => {
@@ -10,7 +10,7 @@ const MobileNav = () => {
 
     return (
         <div>
-            <div className={` z-50  text-3xl ${navShown ? "fixed top-3 right-6" : "sticky"}`} onClick={() => setNavShown(!navShown)}>
+            <div className={`z-50  text-3xl ${navShown ? "fixed top-3 right-6" : "sticky"}`} onClick={() => setNavShown(!navShown)}>
                 {navShown ? <FaTimes/> : <FaBars/>}
             </div>
             {navShown ? <>
@@ -31,6 +31,12 @@ const MobileNav = () => {
                             </li>
                             <li>
                                 <Link onClick={() => setNavShown(false)} href="/losuj/serial" className="singleMobileLinkNav flex gap-3"><FaRandom/> Losuj serial</Link>
+                            </li>
+                            <li>
+                                <Link onClick={() => setNavShown(false)} href="/co-obejrzec" className="singleMobileLinkNav flex gap-3"><FaFilm/> Co obejrzeć?</Link>
+                            </li>
+                            <li>
+                                <Link onClick={() => setNavShown(false)} href="/blog" className="singleMobileLinkNav flex gap-3"><FaParagraph/> Blog</Link>
                             </li>
                             <div className="bg-brand px-4 py-2 rounded-lg  font-bold mt-3">
                                 <li>

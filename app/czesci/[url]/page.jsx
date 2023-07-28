@@ -44,7 +44,6 @@ export default async function Parts({params}) {
   seriesInfo = seriesInfo[0]
   const seriesParts = await getSeriesParts(seriesInfo.id)
 
-  console.log(seriesParts)
 
   return (
 
@@ -64,7 +63,8 @@ export default async function Parts({params}) {
                     ))}
                 </div>
 
-             
+             <h2 className='text-3xl font-semibold mt-3'>Ile jest części {seriesInfo.nazwa}?</h2>
+             <p className='text-xl mt-2 mb-4'>Seria filmowa {seriesInfo.nazwa} składa się z {seriesParts.length} części.</p>
 
 
             </div>

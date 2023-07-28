@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         black: '#131313',
         white: '#e9e9e9',
+        pure_white: "#fff",
         brand: '#FF8A14'
       }
     },

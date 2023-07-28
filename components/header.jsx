@@ -52,6 +52,12 @@ const Header = () => {
                                 <li>
                                     <Link href="/losuj/serial" className='single-link'>Losuj serial</Link>
                                 </li>
+                                <li>
+                                    <Link href="/co-obejrzec" className='single-link'>Co obejrzeć?</Link>
+                                </li>
+                                <li>
+                                    <Link href="/blog" className='single-link'>Blog</Link>
+                                </li>
                             </ul>
                         </nav>
                         <div className='w-32 text-2xl flex justify-end'>

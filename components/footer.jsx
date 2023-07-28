@@ -23,9 +23,11 @@ export default async function Footer() {
                     <div className="flex lg:w-[25%] flex-col gap-3">
                         <h2 className="uppercase text-xl font-bold w-full pb-3">Sprawdź</h2>
                         <Link href="/" className="hover:text-brand transition">Filmersi</Link>
+                        <Link href="/co-obejrzec" className="hover:text-brand transition">Co obejrzeć?</Link>
                         <Link href="/filmy" className="hover:text-brand transition">Filmy Online</Link>
                         <Link href="/seriale" className="hover:text-brand transition">Seriale Online</Link>
                         <Link href="/listy-tematyczne/filmy" className="hover:text-brand transition">Listy tematyczne</Link>
+                        <Link href="/blog" className="hover:text-brand transition">Blog</Link>
                         <Link href="/aplikacja" className="hover:text-brand transition">Aplikacja</Link>
                         <Link href="/twoja-lista" className="hover:text-brand transition">Twoja Lista</Link>
                         <a href="/facebook" target="_blank" className="hover:text-brand transition">Facebook</a>
