@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { FaVideo, FaListOl, FaGuitar, FaRandom, FaTiktok, FaFacebookSquare, FaMobileAlt, FaStar, FaBars, FaTimes, FaFilm, FaParagraph } from "react-icons/fa";
+import { FaVideo, FaListOl, FaGuitar, FaRandom, FaTiktok, FaFacebookSquare, FaMobileAlt, FaStar, FaBars, FaTimes, FaFilm, FaParagraph, FaPlay } from "react-icons/fa";
 
 
 const MobileNav = () => {
@@ -22,6 +22,9 @@ const MobileNav = () => {
                             </li>
                             <li>
                                 <Link onClick={() => setNavShown(false)} href="/seriale" className="singleMobileLinkNav flex gap-3"><FaListOl/> Seriale</Link>
+                            </li>
+                            <li>
+                                <Link onClick={() => setNavShown(false)} href="/cale-filmy-za-darmo-online" className="singleMobileLinkNav flex gap-3 text-green-600"><FaPlay/> Za darmo</Link>
                             </li>
                             <li>
                                 <Link onClick={() => setNavShown(false)} href="/listy-tematyczne/filmy" className="singleMobileLinkNav flex gap-3"><FaGuitar/> Listy tematyczne</Link>

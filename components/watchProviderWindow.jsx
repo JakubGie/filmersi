@@ -26,7 +26,7 @@ const WatchProviderWindow = (props) => {
             link = "http://www.amazon.pl/wyprobujprime?tag=filmer01-21"
             break;
         case 'Amazon Video':
-            link = "http://www.amazon.pl/wyprobujprime?tag=filmer01-21"
+            link = "https://www.amazon.pl/wyprobujprime?tag=filmer01-21"
             break;
         case 'Player':
             link = "https://wclick.pl/enc/MTc4OTA2LjE0OTQ1ODk%3D"

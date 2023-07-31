@@ -5,9 +5,12 @@ import WatchProviderWindow from "./watchProviderWindow"
 import Image from "next/image"
 import NotFound from "./elements/notFound"
 
+import { FaPlay } from "react-icons/fa";
+
 const WatchSources = (props) => {
 
         const [ watchSrcs, setWatchSrcs ] = useState()
+        const [ afiSources, setAfiSources ] = useState()
 
        useEffect(() => {
             if(props.tmdbid===0) {
@@ -18,8 +21,35 @@ const WatchSources = (props) => {
                 }).then((data) => {
                     if(data.results.PL !== undefined) {
                         setWatchSrcs(data.results.PL)
+                        if(typeof data.results.PL.flatrate === 'undefined'){
+                            setAfiSources('undefined')
+                        } else {
+                            data.results.PL.flatrate.map((source) => {
+                                if(source.provider_name === "HBO Max") {
+                                    setAfiSources("https://myclick-5.com/p/EkRa/j3Jq/IFPq")
+                                }
+
+                                else if(source.provider_name === "Player") {
+                                    setAfiSources("https://wclick.pl/enc/MTc4OTA2LjE0OTQ1ODk%3D")
+                                }  
+                                
+                                else if(source.provider_name === "Amazon Prime Video") {
+                                    setAfiSources("https://www.amazon.pl/wyprobujprime?tag=filmer01-21")
+                                }
+
+                                  
+                                else if(source.provider_name === "Amazon Video") {
+                                    setAfiSources("https://www.amazon.pl/wyprobujprime?tag=filmer01-21")
+                                }
+                            
+                                else {
+                                    setAfiSources("undefined")
+                                }
+                        })
+                        }
                     } else {
                         setWatchSrcs('undefined')
+                        setAfiSources('undefined')
                     }
                    
                 })
@@ -36,8 +66,11 @@ const WatchSources = (props) => {
         <>
 
           
-            {watchSrcs !== undefined ? <>
+            {watchSrcs !== undefined && afiSources !== undefined ? <>
 
+                {afiSources === "undefined" ? <>
+                
+                
                 <div className="bg-red-600 rounded-lg font-semibold items-center justify-center flex py-1 uppercase">
                     <h2>Stream</h2>
                 </div>
@@ -45,12 +78,19 @@ const WatchSources = (props) => {
                 { typeof watchSrcs === 'undefined' ? <>
 
                 <NotFound/>
+                
 
                 </> : <>
 
                     {typeof watchSrcs.flatrate === 'undefined' ? <>
 
                         <NotFound/>
+
+                        <a href="https://redirecting5.eu/p/EkRa/PWNX/9E4j?dl=Ug84kYRa&ld=6323" rel="nofollow" className="bg-green-700 text-white flex justify-center  font-semibold min-h-[65px] rounded-lg items-center px-2 hover:hover:brightness-90">
+                            <div className="flex items-center flex-row text-xl justify-center gap-4 px-3">
+                                <FaPlay/> Sprawdź w Find Vod
+                            </div>
+                        </a>
 
                     </> : <>
                     
@@ -71,12 +111,19 @@ const WatchSources = (props) => {
                 { typeof watchSrcs === 'undefined' ? <>
 
                 <NotFound/>
+                
 
                 </> : <>
 
                     {typeof watchSrcs.rent === 'undefined' ? <>
 
                         <NotFound/>
+
+                        <a href="https://redirecting5.eu/p/EkRa/PWNX/9E4j?dl=Ug84kYRa&ld=6323" rel="nofollow" className="bg-green-700 text-white flex justify-center  font-semibold min-h-[65px] rounded-lg items-center px-2 hover:hover:brightness-90">
+                            <div className="flex items-center flex-row text-xl justify-center gap-4 px-3">
+                                <FaPlay/> Sprawdź w Find Vod
+                            </div>
+                        </a>
 
                     </> : <>
                     
@@ -104,6 +151,12 @@ const WatchSources = (props) => {
 
                         <NotFound/>
 
+                        <a href="https://redirecting5.eu/p/EkRa/PWNX/9E4j?dl=Ug84kYRa&ld=6323" rel="nofollow" className="bg-green-700 text-white flex justify-center  font-semibold min-h-[65px] rounded-lg items-center px-2 hover:hover:brightness-90">
+                            <div className="flex items-center flex-row text-xl justify-center gap-4 px-3">
+                                <FaPlay/> Sprawdź w Find Vod
+                            </div>
+                        </a>
+
                     </> : <>
                     
                         {watchSrcs.buy.map((watchProvider) => (
@@ -114,6 +167,27 @@ const WatchSources = (props) => {
                     </>}
 
                 </> }
+
+
+                
+                </> : <>
+                
+                
+                    <div className="bg-red-600 rounded-lg font-semibold items-center justify-center flex py-1 uppercase">
+                        <h2>Stream</h2>
+                    </div>
+
+                    <a href={afiSources} rel="nofollow" className="bg-green-700 text-white flex justify-center  font-semibold min-h-[65px] rounded-lg items-center px-2 hover:hover:brightness-90">
+                        <div className="flex items-center flex-row text-xl justify-center gap-4 px-3">
+                           <FaPlay/> Zarejestruj się{afiSources==="https://www.amazon.pl/wyprobujprime?tag=filmer01-21" ? " za darmo" : ""},<br/>aby oglądać
+                        </div>
+                    </a>
+
+
+                
+                </>}
+
+               
 
 
 

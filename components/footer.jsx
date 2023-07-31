@@ -26,6 +26,7 @@ export default async function Footer() {
                         <Link href="/co-obejrzec" className="hover:text-brand transition">Co obejrzeć?</Link>
                         <Link href="/filmy" className="hover:text-brand transition">Filmy Online</Link>
                         <Link href="/seriale" className="hover:text-brand transition">Seriale Online</Link>
+                        <Link href="/cale-filmy-za-darmo-online" className="text-green-600 transition hover:text-white">Oglądaj za darmo</Link>
                         <Link href="/listy-tematyczne/filmy" className="hover:text-brand transition">Listy tematyczne</Link>
                         <Link href="/blog" className="hover:text-brand transition">Blog</Link>
                         <Link href="/aplikacja" className="hover:text-brand transition">Aplikacja</Link>

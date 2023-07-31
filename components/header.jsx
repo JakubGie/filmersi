@@ -44,6 +44,9 @@ const Header = () => {
                                     <Link href="/seriale" className='single-link'>Seriale</Link>
                                 </li>
                                 <li>
+                                    <Link href="/cale-filmy-za-darmo-online" className='single-link text-green-600 hover:text-white'>Za darmo</Link>
+                                </li>
+                                <li>
                                     <Link href="/listy-tematyczne/filmy" className='single-link'>Listy tematyczne</Link>
                                 </li>
                                 <li>
