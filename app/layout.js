@@ -2,6 +2,7 @@ import Header from '@/components/header'
 import '../styles/globals.css'
 import { Poppins } from 'next/font/google'
 import Footer from '@/components/footer'
+import Script from 'next/script'
 
 const inter = Poppins({ weight: ['300', '400', '500', '600', '700', '800'], subsets: ['latin-ext'] })
 
@@ -18,6 +19,20 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+
+        <Script strategy='afterInteractive' src="https://www.googletagmanager.com/gtag/js?id=G-LJWGBCVZVQ"/>
+
+        <Script id="google-analytics" strategy='afterInteractive'>
+          {
+            `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+    
+              gtag('config', 'G-LJWGBCVZVQ');
+            `
+          }
+        </Script>
       </body>
     </html>
   )
