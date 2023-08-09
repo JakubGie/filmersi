@@ -6,6 +6,8 @@ import MovieWindow from "./movieWindow"
 import Image from "next/image"
 import NotFound from "./elements/notFound"
 
+import { IoMdRefresh } from "react-icons/io"
+
 export default function Movies() {
 
     const selectMovieOrTv = {
@@ -99,6 +101,7 @@ export default function Movies() {
         setIsLoading(true)
         setResults(undefined)
         axios.get('https://api.filmer.wkbdhkmuzv.cfolks.pl/search2/'+movieOrTv+'/'+type+'/'+goodRate+'/'+genre+'/'+country+'/'+year).then((res) => {
+            console.log('https://api.filmer.wkbdhkmuzv.cfolks.pl/search2/'+movieOrTv+'/'+type+'/'+goodRate+'/'+genre+'/'+country+'/'+year)
             setResults(res.data)
             setIsLoading(false)
         })
@@ -139,6 +142,15 @@ export default function Movies() {
                 Szukaj
             </div>
         </div>
+        {year === 1 && genre === "all" && country === "all" ? <>
+        
+            <div className="mt-5 flex justify-center md:justify-start">
+                <div onClick={() => setSearch(search+1)} className="flex text-lg  cursor-pointer transition h-[38px] items-center gap-1 hover w-[125px]  active:text-brand md:bg-black md:hover:bg-zinc-900 text-white justify-center rounded-full  select-none">
+                    <IoMdRefresh className="text-2xl"/> odśwież
+                </div>
+            </div>
+
+        </> : <></>}
         {isLoading ? <>
             <div className="py-8 mt-6">
                 <div className="w-full flex justify-center mt-[100px]">
