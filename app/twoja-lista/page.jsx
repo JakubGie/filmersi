@@ -2,6 +2,8 @@ import BgImage from "@/components/bgImage"
 import Image from "next/image"
 import Link from "next/link"
 import Footer from "@/components/footer"
+import LoginWithGoogle from "@/components/elements/loginWithGoogle"
+import FavList from "@/components/favList"
 
 export async function generateMetadata({params}) {
     return {
@@ -26,7 +28,13 @@ const YourList = () => {
 
                 <div className="container mx-auto px-5">
 
-                    <div className="flex my-10 gap-10 lg:gap-20 flex-col lg:flex-row">
+                    <div className="flex gap-3 flex-col lg:w-[1500px] pt-10 lg:pt-20">
+                        <h1 className="text-4xl lg:text-5xl uppercase font-semibold">Twoja lista</h1>
+                    </div>
+                      
+                    <FavList/>
+
+                    {/*<div className="flex my-10 gap-10 lg:gap-20 flex-col lg:flex-row">
                         <div className="flex gap-3 flex-col lg:w-[1500px] pt-10 lg:pt-20">
                             <h1 className="text-4xl lg:text-5xl uppercase font-semibold">Twoja lista</h1>
                             <p className="text-xl font-light">Dodawaj filmy i seriale do twojej własnej listy w naszej darmowej <Link href="/aplikacja" className="font-semibold">Aplikacji Mobilnej</Link>:</p>
@@ -51,7 +59,7 @@ const YourList = () => {
                             </Link>
 
                         </div>
-                    </div>
+                    </div>*/}
                     
 
 

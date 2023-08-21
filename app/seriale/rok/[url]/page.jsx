@@ -46,7 +46,7 @@ export default async function Year({params}) {
 
       <div className="w-full relative">
 
-        {<BgImage url={movies[0].plakat2}/>}
+        {<BgImage url={movies[1].plakat2}/>}
 
         <div className="absolute w-full">
 

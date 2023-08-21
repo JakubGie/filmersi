@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { FaVideo, FaListOl, FaGuitar, FaRandom, FaTiktok, FaFacebookSquare, FaMobileAlt, FaStar, FaBars, FaTimes, FaFilm, FaParagraph, FaPlay } from "react-icons/fa";
+import LoginWithGoogle from "./elements/loginWithGoogle";
 
 
 const MobileNav = () => {
@@ -17,6 +18,7 @@ const MobileNav = () => {
                 <div className="fixed top-0 left-0 w-full h-screen z-10 navMobile flex items-center justify-center">
                     <nav>
                         <ul className='flex flex-col text-2xl gap-3 uppercase px-6'>
+                            <LoginWithGoogle device="mobile" version={1}/>
                             <li>
                                 <Link onClick={() => setNavShown(false)} href="/filmy" className="singleMobileLinkNav flex gap-3"><FaVideo/> Filmy</Link>
                             </li>

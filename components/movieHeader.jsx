@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { FaPlay, FaStar } from "react-icons/fa"
+import AddToList from "./elements/addToList"
 
 const MovieHeader = (props) => {
     return (
@@ -44,10 +45,10 @@ const MovieHeader = (props) => {
                 {props.version !== "full-movie" && props.version !== "all-parts" ? <Link href={`/${props.movieInfo.typ === "Film" ? "caly-film" : "wszystkie-odcinki" }/${props.movieInfo.url}`} className="bg-red-600 px-5 py-2 text-lg inline-block rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase hover:bg-white hover:text-red-600 transition">
                     <FaPlay/> Oglądaj online
                 </Link> : <></>}
+
+                <AddToList stabilneId={props.movieInfo.stabilneId} />
                 
-                <Link href="/twoja-lista" className="bg-white px-5 py-2 text-lg inline-block text-brand rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase hover:bg-brand hover:text-white transition">
-                    <FaStar/> Dodaj do listy
-                </Link>
+                
                 </div>
             </div>
         

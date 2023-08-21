@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Input from './elements/input'
 import { FaFacebook, FaTiktok } from "react-icons/fa"
 import MobileNav from './mobileNav'
+import LoginWithGoogle from './elements/loginWithGoogle'
 
 
 const Header = () => {
@@ -19,6 +20,7 @@ const Header = () => {
                         </Link>
                         <div className='hidden lg:flex w-full gap-4'>
                             <Input/>
+                            <LoginWithGoogle device="pc" version={1} />
                             <Link href="/aplikacja" className='justify-center flex items-center bg-brand font-bold gap-2 px-5 rounded-full uppercase hover:bg-white hover:text-brand transition'>
                                 <FaMobileAlt/> Aplikacja
                             </Link>

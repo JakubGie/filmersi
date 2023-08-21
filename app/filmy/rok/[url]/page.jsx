@@ -46,13 +46,13 @@ export default async function Year({params}) {
 
       <div className="w-full relative">
 
-        {<BgImage url={movies[0].plakat2}/>}
+        {<BgImage url={movies[1].plakat2}/>}
 
         <div className="absolute w-full">
 
             <div className="container mx-auto px-5">
 
-                <HeaderWithText header={`Filmy ${url}`} description={`Całe filmy z ${url} roku online`} />
+                <HeaderWithText header={`Całe Filmy ${url} Online`} description={`Całe filmy z ${url} roku online`} />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
                     {movies.map((movie, index) => (
