@@ -22,7 +22,7 @@ const YourList = () => {
         
         <div className="w-full relative">
 
-            <BgImage url="https://www.themoviedb.org/t/p/original/dcvbs8z0GEXslC1kCT77x19XDeR.jpg" />
+            <BgImage url="https://www.themoviedb.org/t/p/original/dcvbs8z0GEXslC1kCT77x19XDeR.jpg"  type="hideOnMobile"/>
 
             <div className="absolute w-full">
 

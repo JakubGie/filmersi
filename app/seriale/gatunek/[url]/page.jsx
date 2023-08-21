@@ -53,7 +53,7 @@ export default async function Genre({params}) {
 
       <div className="w-full relative">
 
-        {<BgImage url={movies[1].plakat2}/>}
+        {<BgImage url={movies[1].plakat2} type="hideOnMobile"/>}
 
         <div className="absolute w-full">
 

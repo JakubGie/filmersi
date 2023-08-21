@@ -50,13 +50,13 @@ const AddToList = (params) => {
                 
                     {isOnList ? <>
                     
-                        <button onClick={() => removeFromList(params.stabilneId)} className="text-white px-5 py-2 text-lg inline-block bg-brand rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase hover:text-brand hover:bg-white transition">
+                        <button onClick={() => removeFromList(params.stabilneId)} className="text-white px-5 py-2 text-lg inline-block bg-brand rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase  transition">
                             <FaStar/> Usuń z listy
                         </button>
                     
                     </> : <>
                     
-                    <button onClick={() => addToList(params.stabilneId)} className="bg-white px-5 py-2 text-lg inline-block text-brand rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase hover:bg-brand hover:text-white transition">
+                    <button onClick={() => addToList(params.stabilneId)} className="bg-white px-5 py-2 text-lg inline-block text-brand rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase  transition">
                         <FaStar/> Dodaj do listy
                     </button>
 

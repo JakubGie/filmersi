@@ -204,7 +204,7 @@ export default async function Theme({params}) {
 
       <div className="w-full relative">
 
-        <BgImage url={image}/>
+        <BgImage url={image} type="hideOnMobile"/>
 
         <div className="absolute w-full">
 
