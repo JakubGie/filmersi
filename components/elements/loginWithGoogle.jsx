@@ -15,7 +15,7 @@ const LoginWithGoogle = (params) => {
                 </button>
 
                 </> : <>
-                    <button onClick={() => signOut()} className="bg-white text-black  text-xl text rounded flex justify-center py-3 items-center gap-2 transition">
+                    <button onClick={() => signOut()} className="bg-white text-black  text-sm text rounded flex justify-center py-3 w-full items-center gap-2 transition">
                         <img src="/google-logo.png" className="w-[20px]" alt="Zaloguj się przez Google"/> Wyloguj się
                     </button>
                 </>}
@@ -35,8 +35,8 @@ const LoginWithGoogle = (params) => {
                         
                         </> : <>
                         
-                        <button onClick={() => signIn('google')} className="bg-white text-black  text-xl text rounded flex justify-center py-3 items-center gap-2 transition">
-                            <img src="/google-logo.png" className="w-[25px]" alt="Zaloguj się przez Google"/> Zaloguj się
+                        <button onClick={() => signIn('google')} className="bg-white text-black  text-sm text rounded flex justify-center py-3 w-full items-center gap-2 transition">
+                            <img src="/google-logo.png" className="w-[20px]" alt="Zaloguj się przez Google"/> Zaloguj się przez Google
                         </button>
                         
                         </>}

@@ -65,7 +65,7 @@ const YourList = () => {
 
                 </div>
 
-                <Footer/>
+              
 
             </div>
 

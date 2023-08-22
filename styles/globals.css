@@ -10,7 +10,7 @@
 }
 
 .navMobile {
-  background-color: #131313e8;
+  background-color: var(--black);
 }
 
 body {
@@ -31,6 +31,12 @@ body {
 
 .privacy-policy ul, ol {
   list-style: revert;
+}
+
+.singleMobileLinkNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
