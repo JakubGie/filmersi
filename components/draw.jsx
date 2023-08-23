@@ -56,7 +56,7 @@ const Draw = (params) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8 mt-6">
             
-                    <MovieWindow url={result.url} tytul={result.tytul} opis={result.opis} image={result.plakat} imageBg={result.plakat2} typ={result.typ} rok_produkcji={result.rok_produkcji} ocena_imdb={result.ocena_imdb} />
+                    <MovieWindow stabilneId={result.stabilneId} url={result.url} tytul={result.tytul} opis={result.opis} image={result.plakat} imageBg={result.plakat2} typ={result.typ} rok_produkcji={result.rok_produkcji} ocena_imdb={result.ocena_imdb} />
             
                 </div>
 

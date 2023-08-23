@@ -179,7 +179,7 @@ export default function Movies() {
                
                 {results !== undefined ? <>
                     {results.map((movie, index) => (
-                        <MovieWindow url={movie.url} tytul={movie.tytul} opis={movie.opis} image={movie.plakat} imageBg={movie.plakat2} typ={movie.typ} rok_produkcji={movie.rok_produkcji} ocena_imdb={movie.ocena_imdb} />
+                        <MovieWindow stabilneId={movie.stabilneId} url={movie.url} tytul={movie.tytul} opis={movie.opis} image={movie.plakat} imageBg={movie.plakat2} typ={movie.typ} rok_produkcji={movie.rok_produkcji} ocena_imdb={movie.ocena_imdb} />
                     ))}
                 </> : <></>}
 

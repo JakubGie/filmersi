@@ -57,7 +57,7 @@ export default async function Home() {
                 
                 {trendingMovies.map((movie, index) => (
                   <> {
-                    index < 9 ? <MovieWindow url={movie.url} tytul={movie.tytul} opis={movie.opis} image={movie.plakat} imageBg={movie.plakat2} typ={movie.typ} rok_produkcji={movie.rok_produkcji} ocena_imdb={movie.ocena_imdb} /> : <></>
+                    index < 9 ? <MovieWindow stabilneId={movie.stabilneId} url={movie.url} tytul={movie.tytul} opis={movie.opis} image={movie.plakat} imageBg={movie.plakat2} typ={movie.typ} rok_produkcji={movie.rok_produkcji} ocena_imdb={movie.ocena_imdb} /> : <></>
                   } </>
                 ))}
           
