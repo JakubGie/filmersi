@@ -5,6 +5,7 @@ import Link from "next/link"
 import { FaVideo, FaListOl, FaGuitar, FaRandom, FaTiktok, FaFacebookSquare, FaMobileAlt, FaStar, FaBars, FaTimes, FaFilm, FaParagraph, FaPlay } from "react-icons/fa";
 import LoginWithGoogle from "./elements/loginWithGoogle";
 import Image from "next/image";
+import UserIcon from "./elements/userIcon";
 
 
 const MobileNav = () => {
@@ -26,6 +27,7 @@ const MobileNav = () => {
                     <div className="px-5 pb-5 flex flex-col gap-3">
                         <LoginWithGoogle device="mobile" version={1}/>
                         <Link onClick={() => setNavShown(false)} href="/twoja-lista"  className="bg-brand text-white  text-xl font-bold rounded flex justify-center py-2 w-full items-center gap-2 transition"><FaStar/> Twoja lista</Link>
+                        <UserIcon type="mobile" navShown={navShown} />
                     </div>
                  
                     <nav className="bg-white text-black px-5 py-5">

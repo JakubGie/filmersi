@@ -5,6 +5,7 @@ import Input from './elements/input'
 import { FaFacebook, FaTiktok } from "react-icons/fa"
 import MobileNav from './mobileNav'
 import LoginWithGoogle from './elements/loginWithGoogle'
+import UserIcon from './elements/userIcon'
 
 
 const Header = () => {
@@ -27,6 +28,7 @@ const Header = () => {
                             <Link href="/twoja-lista" className='justify-center flex items-center bg-white text-brand font-bold gap-2 px-5 rounded-full uppercase hover:bg-brand hover:text-white transition'>
                                 <FaStar/><span className='whitespace-nowrap'>Twoja lista</span>
                             </Link>
+                            <UserIcon type="pc"/>
                         </div>
                         <div className='lg:hidden'>
                             <MobileNav/>
