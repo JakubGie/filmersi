@@ -4,6 +4,7 @@ import Link from "next/link"
 import Footer from "@/components/footer"
 import LoginWithGoogle from "@/components/elements/loginWithGoogle"
 import FavList from "@/components/favList"
+import IsLogged from "@/components/elements/isLogged"
 
 export async function generateMetadata({params}) {
     return {
@@ -30,6 +31,7 @@ const YourList = () => {
 
                     <div className="flex gap-3 flex-col lg:w-[1500px] pt-10 lg:pt-20">
                         <h1 className="text-4xl lg:text-5xl uppercase font-semibold">Twoja lista</h1>
+                        <IsLogged/>
                     </div>
                       
                     <FavList/>

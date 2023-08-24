@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import UserName from "@/components/elements/userName"
+import ConnectUsers from "@/components/elements/user/connectUsers"
 
 const User = () => {
 
@@ -27,8 +28,6 @@ const User = () => {
 
     const [ checkNm, setcheckNm] = useState(1)
 
-  
-
     function changeUserName() {
         setSuccess(false)
         if(newUserName==="") {
@@ -46,10 +45,11 @@ const User = () => {
                 }
             }) 
         }
-
-      
-        
     }
+
+
+
+   
 
     if(session && session.user) {
         return (
@@ -61,8 +61,9 @@ const User = () => {
 
                         <div className="bg-white  w-full px-7 py-5 text-3xl font-bold rounded-lg mt-4 overflow-hidden">
                             Witaj <UserName email={session.user.email} checkUsername={checkUsername} checkNm={checkNm} />!
+                            <p className="text-lg font-normal">{session.user.email}</p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 mt-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-9 mt-4 mb-9">
                             <div className="bg-white  w-full px-5 py-6 text-xl rounded-lg mt-4">
                                 <h2 className="font-bold uppercase text-center">Zmień nazwę</h2>
                                 <input className='outline-none px-5 py-2 rounded-full w-full mt-2 placeholder-gray-500' maxlength="25" onChange={(e) => setNewUserName(e.target.value)} value={newUserName} placeholder='Podaj nową nazwę'/>
@@ -92,6 +93,18 @@ const User = () => {
                                         </div>
                                     
                                     </> : <></>}
+                                </div>
+                                
+                            </div>
+                            <div className={`bg-white col-span-2 h-full  w-full  flex-col px-5 py-6 text-xl rounded-lg mt-4 ${typeof isConnected === 'undefined' ? 'flex justify-center items-center' : ''}`}>
+                                <div className="grid gap-3 md:grid-cols-2  w-full h-full">
+                                    <div className="w-full h-full">
+                                        <ConnectUsers email={session.user.email}/>
+                                    </div>
+                                    <div className="text-sm px-3 w-full flex h-full flex-col pt-3">
+                                        <h2 className="font-bold text-xl pb-3">Jak to działa?</h2>
+                                        Podaj adres email konta które chcesz powiązać z Twoim kontem. Po powiązaniu będziesz dzielił listę filmów z powiązanym kontem. Idealne dla par :)
+                                    </div>
                                 </div>
                                 
                             </div>

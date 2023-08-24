@@ -17,7 +17,7 @@ const MobileNav = () => {
                 {navShown ? <FaTimes/> : <FaBars/>}
             </div>
             <div className={`z-50  text-3xl ${navShown ? "fixed top-5 left-5" : "hidden"}`}>
-                <Link href="/" className='flex items-center relative h-6 w-36 lg:h-7 lg:w-52'>
+                <Link onClick={() => setNavShown(false)} href="/" className='flex items-center relative h-6 w-36 lg:h-7 lg:w-52'>
                     <Image src="/logo_light.png" alt="Filmersi"  layout="fill"/>
                 </Link>
             </div>

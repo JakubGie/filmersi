@@ -12,7 +12,7 @@ const MovieWindow = (props) => {
            
             <div class="singleMovie absolute flex w-full shrink-0 h-full p-4 gap-4 md:gap-5">
 
-                <div>
+                <div className="w-[160px] sm:w-[185px]">
                     <Link href={`/${props.typ === "Film" ? "film" : "serial"}/${props.url}`} className="w-[95px] h-[135px] md:w-[130px] md:h-[195px] rounded-xl overflow-hidden shrink-0  relative content-between bg-none">
                         <img
                             alt={`${props.tytul} ${props.typ === "Film" ? "cały film" : "wszystkie odcinki" }`}

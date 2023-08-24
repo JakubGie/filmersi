@@ -79,7 +79,7 @@ const FavList = () => {
 
         return (
             <div className="flex gap-4 mt-2 flex-col pb-10">
-                <p className="text-xl font-light">Zaloguj się, aby dodawać filmy do Twojej listy:</p>
+                <p className="text-xl font-light">Zaloguj się, aby dodawać filmy do Twojej listy i dzielić listę z innym użytkownikiem:</p>
                 <LoginWithGoogle version={2}/>
 
             </div>
