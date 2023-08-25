@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { FaMobileAlt, FaStar } from "react-icons/fa"
 import Link from 'next/link'
 import Input from './elements/input'
-import { FaFacebook, FaTiktok } from "react-icons/fa"
+import { FaFacebook, FaTiktok, FaHeart } from "react-icons/fa"
 import MobileNav from './mobileNav'
 import LoginWithGoogle from './elements/loginWithGoogle'
 import UserIcon from './elements/userIcon'
@@ -51,7 +51,10 @@ const Header = () => {
                                     <Link href="/cale-filmy-za-darmo-online" className='single-link text-green-600 hover:text-white'>Za darmo</Link>
                                 </li>
                                 <li>
-                                    <Link href="/listy-tematyczne/filmy" className='single-link'>Listy tematyczne</Link>
+                                    <Link href="/co-obejrzec-z-dziewczyna-chlopakiem" className='single-link text-red-600 hover:text-white flex gap-1 items-center'><FaHeart/> Dobierz</Link>
+                                </li>
+                                <li>
+                                    <Link href="/listy-tematyczne/filmy" className='single-link'>Listy temat.</Link>
                                 </li>
                                 <li>
                                     <Link href="/losuj/film" className='single-link'>Losuj film</Link>
