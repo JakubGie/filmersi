@@ -23,15 +23,15 @@ const ConnectedInfo = (params) => {
             
                 {isConnected.isconnection === true ? <>
                 
-                <div className="flex gap-2 items-center">
-                    Lista powiązana z <b className="text-red-400"><Link href="/user" >{isConnected.username === "" ? isConnected.user : isConnected.username}</Link></b> <FaHeart/>
+                <div className="flex gap-2  flex-col justify-start  sm:flex-row  items-start">
+                    Lista powiązana z <span className="flex gap-2 items-center"><b className="text-red-400"><Link href="/user" >{isConnected.username === "" ? isConnected.user : isConnected.username}</Link></b> <FaHeart/></span>
                 </div>
                    
                 
                 </> : <>
                 
                 <div className="flex gap-2 items-center text-red-400">
-                    <b className="text-red-400"><Link href="/user" >Dziel listę z innym kontem</Link></b>
+                    <b className="text-red-400"><Link href="/user" >Dziel listę z innym użytkownikiem</Link></b>
                 </div>
                 
                 </>}

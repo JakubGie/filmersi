@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import UserName from "@/components/elements/userName"
 import ConnectUsers from "@/components/elements/user/connectUsers"
+import LoginWithGoogle from "@/components/elements/loginWithGoogle"
 
 const User = () => {
 
@@ -103,7 +104,7 @@ const User = () => {
                                     </div>
                                     <div className="text-sm px-3 w-full flex h-full flex-col pt-3">
                                         <h2 className="font-bold text-xl pb-3">Jak to działa?</h2>
-                                        Podaj adres email konta które chcesz powiązać z Twoim kontem. Po powiązaniu będziesz dzielił listę filmów z powiązanym kontem. Idealne dla par :)
+                                        Wpisz email użytkownika z którym chcesz się połączyć, a on niech wpisze Twój. Będziecie mieli wspólną listę filmów.
                                     </div>
                                 </div>
                                 
@@ -129,6 +130,9 @@ const User = () => {
                         <div className="flex mt-10 gap-10 lg:gap-20 flex-col lg:flex-row pt-10 lg:pt-20">
                             <div className="flex gap-3 flex-col lg:w-[370px]">
                                 <h1 className="text-4xl lg:text-3xl uppercase font-semibold">Zaloguj się, aby uzyskać dostęp do panelu użytkownika</h1>
+                                <div className="py-3">
+                                    <LoginWithGoogle/>
+                                </div>
                                 <a href="/" className="underline">Wróć na stronę główną</a>
                             </div>
                         </div>
