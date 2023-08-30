@@ -178,7 +178,7 @@ const WatchSources = (props) => {
                     </div>
 
                     <a href={afiSources} rel="nofollow" className="bg-green-700 text-white flex justify-center  font-semibold min-h-[65px] rounded-lg items-center px-2 hover:hover:brightness-90">
-                        <div className="flex items-center flex-row text-xl justify-center gap-4 px-3">
+                        <div className={`flex items-center flex-row justify-center gap-4 px-3 ${afiSources==="https://www.amazon.pl/wyprobujprime?tag=filmer01-21" ? "text-base" : "text-xl"}`}>
                            <FaPlay/> Zarejestruj się{afiSources==="https://www.amazon.pl/wyprobujprime?tag=filmer01-21" ? " za darmo" : ""},<br/>aby oglądać
                         </div>
                     </a>

@@ -37,6 +37,12 @@ async function getPosts() {
   return res.data
 }
 
+async function getUserPosts() {
+  const res = await axios.get('https://api.filmer.wkbdhkmuzv.cfolks.pl/getPostsForSitemap')
+
+  return res.data
+}
+
 export default async function sitemap() {
 
   const movies = await getMovies()
@@ -45,6 +51,7 @@ export default async function sitemap() {
   const countries = await getCountries()
   const series = await getSeries()
   const posts = await getPosts()
+  const postsU = await getUserPosts()
 
  
 
@@ -110,6 +117,13 @@ export default async function sitemap() {
     lastModified: new Date().toISOString()
   }));
 
+  const postyU = postsU.map((route) => ({
+    url: `${URL}/post/${route.url}`,
+    lastModified: new Date().toISOString()
+  }));
+
+
+
 
   const currentYear = new Date().getFullYear()
 
@@ -131,11 +145,11 @@ export default async function sitemap() {
 
 
  
-  const routes = ["", "/filmy", "/seriale", "/listy-tematyczne/filmy", "/aplikacja", "/co-obejrzec", "/blog", "/cale-filmy-za-darmo-online", "/aplikacja/polityka-prywatnosci", "/losuj/serial", "/losuj/film", "/twoja-lista", "/filmy/temat/na-wieczor", "/filmy/temat/horrory", "/filmy/temat/stare-horrory", "/filmy/temat/polskie", "/filmy/temat/polskie-klasyki", "/filmy/temat/pieniadze", "/filmy/temat/zagadka", "/filmy/temat/wojna", "/filmy/temat/animacje", "/filmy/temat/komediowe", "/filmy/temat/na-faktach", "/filmy/temat/muzyka-hiphop", "/filmy/temat/bokser"].map((route) => ({
+  const routes = ["", "/filmy", "/seriale", "/listy-tematyczne/filmy", "/aplikacja", "/forum", "/co-obejrzec", "/blog", "/cale-filmy-za-darmo-online", "/aplikacja/polityka-prywatnosci", "/losuj/serial", "/losuj/film", "/twoja-lista", "/filmy/temat/na-wieczor", "/filmy/temat/horrory", "/filmy/temat/stare-horrory", "/filmy/temat/polskie", "/filmy/temat/polskie-klasyki", "/filmy/temat/pieniadze", "/filmy/temat/zagadka", "/filmy/temat/wojna", "/filmy/temat/animacje", "/filmy/temat/komediowe", "/filmy/temat/na-faktach", "/filmy/temat/muzyka-hiphop", "/filmy/temat/bokser"].map((route) => ({
     url: `${URL}${route}`,
     lastModified: new Date().toISOString()
   }));
 
  
-  return [...routes, ...calyFilm, ...posty, ...wszystkieOdcinki, ...seria, ...podobneFilmy, ...filmyRok, ...serialeRok, ...film, ...serial, ...podobneSeriale, ...filmyGatunek, ...serialeGatunek, ...filmyKraj, ...serialeKraj];
+  return [...routes, ...calyFilm, ...posty, ...wszystkieOdcinki, ...seria, ...podobneFilmy, ...filmyRok, ...serialeRok, ...film, ...serial, ...podobneSeriale, ...filmyGatunek, ...serialeGatunek, ...filmyKraj, ...serialeKraj, ...postyU];
 }

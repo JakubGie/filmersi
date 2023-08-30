@@ -101,7 +101,6 @@ export default function Movies() {
         setIsLoading(true)
         setResults(undefined)
         axios.get('https://api.filmer.wkbdhkmuzv.cfolks.pl/search2/'+movieOrTv+'/'+type+'/'+goodRate+'/'+genre+'/'+country+'/'+year).then((res) => {
-            console.log('https://api.filmer.wkbdhkmuzv.cfolks.pl/search2/'+movieOrTv+'/'+type+'/'+goodRate+'/'+genre+'/'+country+'/'+year)
             setResults(res.data)
             setIsLoading(false)
         })

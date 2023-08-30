@@ -60,7 +60,18 @@ export default async function whatToWatch() {
                 </div>
 
                 <div className='bg-white px-5 py-4 lg:px-10 lg:py-10 rounded-xl mt-8 text-black'>
-                  <h2 className='text-3xl lg:text-4xl font-semibold'>2. Dobierz dwa filmy</h2>
+                  <h2 className='text-3xl lg:text-4xl font-semibold'>2. Sprawdź nasze forum</h2>
+                  <p className='mt-3'>Sprawdź wpisy naszych użytkowników i znajdź film do obejrzenia:</p>
+                  <div className='mt-6 font-semibold flex flex-col md:flex-row gap-3 text-center'>
+                      <Link href="/forum" className='bg-brand text-white uppercase px-6 py-2 inline-block rounded-full hover:bg-black hover:text-white transition'>
+                          Sprawdź forum
+                      </Link>
+                  </div>
+
+                </div>
+
+                <div className='bg-white px-5 py-4 lg:px-10 lg:py-10 rounded-xl mt-8 text-black'>
+                  <h2 className='text-3xl lg:text-4xl font-semibold'>3. Dobierz dwa filmy</h2>
                   <p className='mt-3'>Wybierz dwa filmy, a my na ich podstawie pokażemy Ci nasze rekomendacje:</p>
                   <div className='mt-6 font-semibold flex flex-col md:flex-row gap-3 text-center'>
                       <Link href="/co-obejrzec-z-dziewczyna-chlopakiem" className='bg-brand text-white uppercase px-6 py-2 inline-block rounded-full hover:bg-black hover:text-white transition'>
@@ -71,7 +82,7 @@ export default async function whatToWatch() {
                 </div>
                
                 <div className='bg-white px-5 py-4 lg:px-10 lg:py-10 rounded-xl mt-8 text-black'>
-                  <h2 className='text-3xl lg:text-4xl font-semibold'>3. Sprawdź listy tematyczne</h2>
+                  <h2 className='text-3xl lg:text-4xl font-semibold'>4. Sprawdź listy tematyczne</h2>
                   <div className='mt-6 text-white'>
                       <Lists version={1} />
                   </div>
@@ -79,12 +90,12 @@ export default async function whatToWatch() {
               
 
                 <div className='bg-white px-5 py-4 lg:px-10 lg:py-10 rounded-xl mt-8 text-black'>
-                  <h2 className='text-3xl lg:text-4xl font-semibold'>4. Znajdź podobny film/serial</h2>
+                  <h2 className='text-3xl lg:text-4xl font-semibold'>5. Znajdź podobny film/serial</h2>
                   <p className='mt-3'>Znajdź podobny film lub serial korzystając z wyszukiwarki na naszej stronie.</p>
                 </div>
               
                 <div className='bg-white px-5 py-4 lg:px-10 lg:py-10 rounded-xl mt-8 text-black'>
-                  <h2 className='text-3xl lg:text-4xl font-semibold'>5. Wylosuj film/serial</h2>
+                  <h2 className='text-3xl lg:text-4xl font-semibold'>6. Wylosuj film/serial</h2>
                   <div className='mt-6 font-semibold flex flex-col md:flex-row gap-3 text-center'>
                       <Link href="/losuj/film" className='bg-brand text-white uppercase px-6 py-2 inline-block rounded-full hover:bg-black  transition'>
                           Losuj film
@@ -96,7 +107,7 @@ export default async function whatToWatch() {
                 </div>
 
                 <div className='bg-white px-5 py-4 lg:px-10 lg:py-10 rounded-xl mt-8 text-black'>
-                  <h2 className='text-3xl lg:text-4xl font-semibold'>6. Sprawdź nasz blog</h2>
+                  <h2 className='text-3xl lg:text-4xl font-semibold'>7. Sprawdź nasz blog</h2>
                   <a href="/blog" className='border-2 mt-3 mb-10 border-black uppercase px-6 py-2 inline-block rounded-full hover:bg-black hover:text-white font-bold flex gap-3 w-[179px] transition'>
                       Sprawdź blog
                   </a>
@@ -104,7 +115,7 @@ export default async function whatToWatch() {
              
 
                 <div className='bg-white px-5 py-4 lg:px-10 lg:py-10 rounded-xl mt-8 text-black'>
-                  <h2 className='text-3xl lg:text-4xl font-semibold'>7. Skorzystaj z naszej aplikacji</h2>
+                  <h2 className='text-3xl lg:text-4xl font-semibold'>8. Skorzystaj z naszej aplikacji</h2>
                   <p className='mt-3'>Nasza darmowa aplikacja pomoże Ci znaleźć film lub serial do obejrzenia. Będziesz go mógł dodać do swojej listy "na potem".</p>
                   <a href="https://app.filmersi.pl" target="_blank" className='border-2 mt-3 mb-10 border-black uppercase px-6 py-2 inline-block rounded-full hover:bg-black hover:text-white font-bold flex gap-3 w-[240px] transition'>
                       <FaDownload/> Pobierz za darmo

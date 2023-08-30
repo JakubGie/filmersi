@@ -22,12 +22,17 @@ const Header = () => {
                         <div className='hidden lg:flex w-full gap-4'>
                             <Input/>
                             <LoginWithGoogle device="pc" version={1} />
+
+                          
                             <Link href="/aplikacja" className='justify-center flex items-center bg-brand font-bold gap-2 px-5 rounded-full uppercase hover:bg-white hover:text-brand transition'>
                                 <FaMobileAlt/> Aplikacja
                             </Link>
                             <Link href="/twoja-lista" className='justify-center flex items-center bg-white text-brand font-bold gap-2 px-5 rounded-full uppercase hover:bg-brand hover:text-white transition'>
                                 <FaStar/><span className='whitespace-nowrap'>Twoja lista</span>
                             </Link>
+                            {/*<Link href="/post/dodaj" className='bg-white text-black w-[71px] rounded-full flex items-center justify-center text-xl font-bold'>
+                                +
+                            </Link>*/}
                             <UserIcon type="pc"/>
                         </div>
                         <div className='lg:hidden'>
@@ -40,12 +45,15 @@ const Header = () => {
                     </div>
                     <div className="mt-2 pt-2 justify-between hidden lg:flex">
                         <nav className='flex w-full'>
-                            <ul className='flex justify-between xl:gap-10 xl:justify-normal w-full font-semibold items-end'>
+                            <ul className='flex justify-between xl:gap-8 xl:justify-normal w-full font-semibold items-end'>
                                 <li>
                                     <Link href="/filmy" className='single-link'>Filmy</Link>
                                 </li>
                                 <li>
                                     <Link href="/seriale" className='single-link'>Seriale</Link>
+                                </li>
+                                <li>
+                                    <Link href="/forum" className='single-link text-brand hover:text-white flex gap-1 items-center'>Forum</Link>
                                 </li>
                                 <li>
                                     <Link href="/cale-filmy-za-darmo-online" className='single-link text-green-600 hover:text-white'>Za darmo</Link>
@@ -54,7 +62,7 @@ const Header = () => {
                                     <Link href="/co-obejrzec-z-dziewczyna-chlopakiem" className='single-link text-red-600 hover:text-white flex gap-1 items-center'><FaHeart/> Dobierz</Link>
                                 </li>
                                 <li>
-                                    <Link href="/listy-tematyczne/filmy" className='single-link'>Listy temat.</Link>
+                                    <Link href="/listy-tematyczne/filmy" className='single-link'>Listy</Link>
                                 </li>
                                 <li>
                                     <Link href="/losuj/film" className='single-link'>Losuj film</Link>

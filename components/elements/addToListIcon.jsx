@@ -19,9 +19,7 @@ const AddToListIcon = (params) => {
 
         if(session && session.user) {
             setIsOnList(false)
-            console.log('https://api.filmer.wkbdhkmuzv.cfolks.pl/checkIfOnList/'+params.stabilneId+'/'+session.user.email)
             axios.get('https://api.filmer.wkbdhkmuzv.cfolks.pl/checkIfOnList/'+params.stabilneId+'/'+session.user.email).then((res) => {
-                console.log(res.data)
                setIsOnList(res.data)
             })
          }

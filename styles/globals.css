@@ -129,23 +129,23 @@ body {
 
 /* Scrollbar */
 
-body::-webkit-scrollbar
+*::-webkit-scrollbar
 {
 	width: 10px;
 	height: 10px;
 }
 
-body::-webkit-scrollbar-track
+*::-webkit-scrollbar-track
 {
 	background-color: var(--black);
 }
 
-body::-webkit-scrollbar-thumb
+*::-webkit-scrollbar-thumb
 {
 	background-color: #fff;
 }
 
-body::-webkit-scrollbar-thumb:hover
+*::-webkit-scrollbar-thumb:hover
 {
 	background-color: #fff;
 }

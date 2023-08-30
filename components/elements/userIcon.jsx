@@ -1,14 +1,12 @@
 "use client"
 
-import { useSession } from "next-auth/react"
 import { FaUserAlt } from "react-icons/fa"
 import Link from "next/link"
 
 const UserIcon = (params) => {
-    const { data: session } = useSession()
 
    
-      if(session && session.user) {
+     
         if(params.type==="pc") {
             return (
                 <Link href="/user" className="h-[28px] rounded-full flex justify-center items-center text-xl"><FaUserAlt/></Link>
@@ -19,7 +17,7 @@ const UserIcon = (params) => {
             )
         }
        
-      }
+     
 }
 
 export default UserIcon

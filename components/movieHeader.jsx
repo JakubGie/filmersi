@@ -35,12 +35,12 @@ const MovieHeader = (props) => {
                     </div>
                 </div>
 
-                <p className="w-full lg:max-w-[700px]">
+                <Link href={`/${props.movieInfo.typ === "Film" ? "film" : "serial"}/${props.movieInfo.url}`} className="w-full lg:max-w-[700px]">
                     {props.fullVersion ? props.movieInfo.opis : <>{
                         props.movieInfo.opis.substring(0, 300)}{props.movieInfo.opis.length > 300 ? "..." : ""
                     }</>}
                    
-                </p>
+                </Link>
                 <div className="mt-4 flex gap-3 flex-col lg:flex-row">
                 {props.version !== "full-movie" && props.version !== "all-parts" ? <Link href={`/${props.movieInfo.typ === "Film" ? "caly-film" : "wszystkie-odcinki" }/${props.movieInfo.url}`} className="bg-red-600 px-5 py-2 text-lg inline-block rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase hover:bg-white hover:text-red-600 transition">
                     <FaPlay/> Oglądaj online
