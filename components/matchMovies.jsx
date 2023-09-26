@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react"
 import MovieWindow from "@/components/movieWindow"
 import Image from "next/image"
 import Link from "next/link"
+import Patrons from "./elements/patrons"
 
 
 
@@ -219,6 +220,7 @@ const MatchMovies = () => {
                       
                  
 
+                        <Patrons/>
                 </div>
 
               

@@ -9,6 +9,7 @@ import MovieHeader from "@/components/movieHeader"
 import MovieWindow from "@/components/movieWindow"
 import Link from "next/link"
 import PostWindow from '@/components/posts/postWindow'
+import Patrons from '@/components/elements/patrons'
 
 async function getTrendingMovies() {
   const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/trendingMovies', { cache: 'no-store' })
@@ -61,6 +62,8 @@ export default async function Home() {
             <div className="container mx-auto px-5">
 
               <MovieHeader version="main" movieInfo={trendingMovie} fullVersion={false} />
+
+              <Patrons/>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 py-8">
                 

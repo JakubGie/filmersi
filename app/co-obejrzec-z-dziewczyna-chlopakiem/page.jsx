@@ -1,3 +1,4 @@
+import Patrons from "@/components/elements/patrons"
 import MatchMovies from "@/components/matchMovies"
 
 
@@ -16,7 +17,8 @@ export async function generateMetadata({params}) {
 const WhatWatchWithBfGf = () => {
     return (
         
-        <MatchMovies/>
+          <MatchMovies/>
+        
 
     )
 }

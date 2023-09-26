@@ -20,6 +20,11 @@ module.exports = {
           destination: 'https://www.facebook.com/filmersi',
           permanent: true,
         },
+        {
+          source: '/patronite',
+          destination: 'https://patronite.pl/filmersi',
+          permanent: true,
+        },
       ]
     },
   }
