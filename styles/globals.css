@@ -18,6 +18,10 @@ body {
   color: var(--white);
 }
 
+.register-window {
+  background-color: #000000c5;
+}
+
 .additional-info h2 {
   font-size: 25px;
   font-weight: 600;

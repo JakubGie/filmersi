@@ -25,6 +25,11 @@ module.exports = {
           destination: 'https://patronite.pl/filmersi',
           permanent: true,
         },
+        {
+          source: '/rejestracja/find-vod',
+          destination: 'https://wclick.pl/enc/MTc4OTA2LjEzNjQwNzM%3D?dl=Ug84kYRa&ld=6323',
+          permanent: true,
+        },
       ]
     },
   }
