@@ -23,13 +23,15 @@ const Patrons = () => {
     const [ patreons, setPatreons ] = useState()
     const [ isFull, setIsFull ] = useState(false)
 
-    useEffect(() => {
+   /* useEffect(() => {
         axios.get('https://api.filmer.wkbdhkmuzv.cfolks.pl/getPatrons').then((res) => {
             setPatreons(res.data)
         })
-    }, [])
+    }, [])*/
 
-    return (
+    return null
+
+    /*return (
         <>
         
             <div className="flex pt-5 gap-3 flex-wrap">
@@ -89,7 +91,7 @@ const Patrons = () => {
             </a>
         
         </>
-    )
+    )*/
 }
 
 export default Patrons
