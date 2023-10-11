@@ -8,6 +8,9 @@ import YtPlayer from "@/components/ytPlayer"
 
 
 import Footer from "@/components/footer"
+import { FaLock } from "react-icons/fa"
+import YtPlayer2 from "@/components/ytPlayer2"
+import RegisterWindow from "@/components/registerWindow"
 
 async function getMovieInfo(url) {
     const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/movieInfoUrl/'+url)
@@ -74,7 +77,7 @@ export default async function AllParts({params}) {
 
                     <div className="flex pt-8 lg:py-8 gap-3 flex-col lg:flex-row">
                         <div className="lg:w-[550px] text-lg flex gap-3 justify-start uppercase font-light flex-col pt-6">
-                            <div className="flex gap-2 justify-center text-sm lg:text-lg items-center">
+                            {/*<div className="flex gap-2 justify-center text-sm lg:text-lg items-center">
                                 Dostępne dzięki 
                                 <div className="w-[160px] h-[23px] shrink-0  relative content-between bg-none">
                                     <Image
@@ -84,16 +87,31 @@ export default async function AllParts({params}) {
                                         objectFit='contain'
                                     />
                                 </div>
-                            </div>
+                            </div>*/}
                             <div className="font-semibold justify-center flex">
                                 <p>Oglądaj {movieInfo.tytul} Wszystkie Odcinki Online na:</p>
                             </div>
-                            <WatchSources tmdbid={movieInfo.tmdbid} typ="tv" />
+
+                            <div>
+
+                                <a href="/rejestracja/find-vod" rel="nofollow" className="bg-black border-2 border-brand flex justify-between text-white font-semibold  rounded-lg items-center px-5 flex-col sm:flex-row py-5 sm:py-0 gap-3 sm:gap-0">
+                                    <FaLock className="text-[50px] sm:text-[150px]"/>
+                                    <p className="pl-4">Dostęp do źródeł oglądania tylko dla zarejestrowanych użytkowników Find Vod</p>
+                                </a>
+                                <a href="/rejestracja/find-vod" className="bg-brand font-bold w-full mt-3 text-center py-2 flex  items-center justify-center rounded-full text-2xl px-4 hover:bg-white hover:text-black transition" rel="nofollow">
+                                    Zarejestruj się
+                                </a>
+
+                            </div>
+
+                            <RegisterWindow/>
+
+                            {/*<WatchSources tmdbid={movieInfo.tmdbid} typ="tv" />*/}
                         </div>
                         <div className="w-full flex justify-center pt-10">
                           
                             { movieInfo.zwiastun !== "" ? <>
-                                <YtPlayer id={movieInfo.zwiastun} />
+                                <YtPlayer2 id={movieInfo.zwiastun} />
                             </> : <></> }
 
                         </div>
