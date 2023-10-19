@@ -15,7 +15,7 @@ import YtPlayer2 from "@/components/ytPlayer2"
 import RegisterWindow from "@/components/registerWindow"
 
 async function getMovieInfo(url) {
-    const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/movieInfoUrl/'+url)
+    const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/movieInfoUrl/'+url, { cache: 'no-store' })
   
     return res.json()
   }
@@ -109,7 +109,16 @@ export default async function FullMovie({params}) {
 
                 <div className="container mx-auto px-5">
 
-                    <div className="flex pt-8 lg:py-8 gap-3 flex-col lg:flex-row">
+                    <div className="flex lg:pb-8 gap-3 flex-col lg:flex-row">
+                       
+                        <div className="w-full flex justify-center pt-10">
+                          
+                                <YtPlayer2 id={movieInfo.zwiastun} plakat2={movieInfo.plakat2} />
+
+                        </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-center">
                         <div className="lg:w-[550px] text-lg flex gap-3 justify-start uppercase font-light flex-col pt-6">
                             {/*<div className="flex gap-2 justify-center text-sm lg:text-lg items-center">
                                 Dostępne dzięki 
@@ -137,14 +146,7 @@ export default async function FullMovie({params}) {
                                 </a>
                                 
                             </div>
-                            <RegisterWindow/>
-                        </div>
-                        <div className="w-full flex justify-center pt-10">
-                          
-                            { movieInfo.zwiastun !== "" ? <>
-                                <YtPlayer2 id={movieInfo.zwiastun} />
-                            </> : <></> }
-
+                            {/* <RegisterWindow/> */}
                         </div>
                     </div>
 
