@@ -11,7 +11,6 @@ import { BsFullscreen } from "react-icons/bs"
 const YtPlayer2 = (params) => {
 
     const windowSize = useRef([window.innerWidth, window.innerHeight])
-    console.log(windowSize.current[0])
 
     const [ isPlaying, setIsPlaying ] = useState(true)
     const [ isLoading, setIsLoading ] = useState(true)
@@ -26,6 +25,8 @@ const YtPlayer2 = (params) => {
     const [ playerLoading, setPlayerLoading ] = useState(true)
 
     const [ shown, setShonw ] = useState(false)
+
+    const [ videoElement, setVideoElement ] = useState({})
 
    useEffect(() => {
     if(windowSize.current[0]>1400) {
@@ -54,7 +55,6 @@ const YtPlayer2 = (params) => {
 
   
 
-    var videoElement = {}
 
     if(params.id==="") {
          var time = 4000
@@ -77,7 +77,8 @@ const YtPlayer2 = (params) => {
     }
    
     const _onReady = (event) => {
-        videoElement = event
+        setVideoElement(event)
+        console.log("Player ready")
         setIsLoading(false)
         setIsPlaying(false)
 
