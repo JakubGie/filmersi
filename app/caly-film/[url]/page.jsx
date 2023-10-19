@@ -111,7 +111,7 @@ export default async function FullMovie({params}) {
 
                     <div className="flex lg:pb-8 gap-3 flex-col lg:flex-row">
                        
-                        <div className="w-full flex justify-center pt-10">
+                        <div className="w-full flex justify-center pt-5 sm:pt-10">
                           
                                 <YtPlayer2 id={movieInfo.zwiastun} plakat2={movieInfo.plakat2} />
 

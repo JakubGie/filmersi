@@ -75,7 +75,7 @@ export default async function AllParts({params}) {
 
                 <div className="container mx-auto px-5">
 
-                    <div className="flex pt-8 lg:py-8 gap-3 flex-col lg:flex-row">
+                    {/*<div className="flex pt-8 lg:py-8 gap-3 flex-col lg:flex-row">
                         <div className="lg:w-[550px] text-lg flex gap-3 justify-start uppercase font-light flex-col pt-6">
                             {/*<div className="flex gap-2 justify-center text-sm lg:text-lg items-center">
                                 Dostępne dzięki 
@@ -88,7 +88,7 @@ export default async function AllParts({params}) {
                                     />
                                 </div>
                             </div>*/}
-                            <div className="font-semibold justify-center flex">
+                            {/*<div className="font-semibold justify-center flex">
                                 <p>Oglądaj {movieInfo.tytul} Wszystkie Odcinki Online na:</p>
                             </div>
 
@@ -107,7 +107,7 @@ export default async function AllParts({params}) {
                             <RegisterWindow/>
 
                             {/*<WatchSources tmdbid={movieInfo.tmdbid} typ="tv" />*/}
-                        </div>
+                        {/*</div>
                         <div className="w-full flex justify-center pt-10">
                           
                             { movieInfo.zwiastun !== "" ? <>
@@ -115,7 +115,49 @@ export default async function AllParts({params}) {
                             </> : <></> }
 
                         </div>
+                     </div>*/}
+
+                    <div className="flex lg:pb-8 gap-3 flex-col lg:flex-row">
+                       
+                        <div className="w-full flex justify-center pt-5 sm:pt-10">
+                          
+                                <YtPlayer2 id={movieInfo.zwiastun} plakat2={movieInfo.plakat2} />
+
+                        </div>
                     </div>
+                    
+                    <div className="flex items-center justify-center">
+                        <div className="lg:w-[550px] text-lg flex gap-3 justify-start uppercase font-light flex-col pt-6">
+                            {/*<div className="flex gap-2 justify-center text-sm lg:text-lg items-center">
+                                Dostępne dzięki 
+                                <div className="w-[160px] h-[23px] shrink-0  relative content-between bg-none">
+                                    <Image
+                                        alt={`JustWatch Logo`}
+                                        src={'/justwatch.png'}
+                                        layout='fill'
+                                        objectFit='contain'
+                                    />
+                                </div>
+                            </div>*/}
+                            <div className="font-semibold justify-center flex">
+                                <p>Oglądaj {movieInfo.tytul} Wszystkie Odcinki Online na:</p>
+                            </div>
+                            {/*<WatchSources tmdbid={movieInfo.tmdbid} typ="movie" />*/}
+                            <div>
+
+                                <a href="/rejestracja/find-vod" rel="nofollow" className="bg-black border-2 border-brand flex justify-between text-white font-semibold  rounded-lg items-center px-5 flex-col sm:flex-row py-5 sm:py-0 gap-3 sm:gap-0">
+                                    <FaLock className="text-[50px] sm:text-[150px]"/>
+                                    <p className="pl-4">Dostęp do źródeł oglądania tylko dla zarejestrowanych użytkowników Find Vod</p>
+                                </a>
+                                <a href="/rejestracja/find-vod" className="bg-brand font-bold w-full mt-3 text-center py-2 flex  items-center justify-center rounded-full text-2xl px-4 hover:bg-white hover:text-black transition" rel="nofollow">
+                                    Zarejestruj się
+                                </a>
+                                
+                            </div>
+                            {/* <RegisterWindow/> */}
+                        </div>
+                    </div>
+
 
                     <MovieHeader version="all-parts" movieInfo={movieInfo} fullVersion={true} />
 

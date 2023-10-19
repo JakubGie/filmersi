@@ -45,7 +45,7 @@ const YtPlayer2 = (params) => {
         setCropSize(60)
     }
     else {
-        setPlayerWidth(350)
+        setPlayerWidth("100%")
         setPlayerHeight(250)
         setCropSize(60)
     }
@@ -130,15 +130,15 @@ const YtPlayer2 = (params) => {
             
             <div className="flex relative rounded-2xl overflow-hidden bg-[#000]">
                     <YouTube videoId={params.id !== "" ? params.id : "eOrNdBpGMv8"} onReady={_onReady} opts={opts} className={`rounded-2xl w-[${playerWidth}px] lg:h-[${playerHeight}px] "`}/>
-                    <div className={`bg-[#000] absolute top-0 left-0 w-full h-[${cropSize}px] z-10`}>
+                    <div className={`bg-[#000] absolute top-0 left-0 w-full h-[${cropSize}px] z-[3]`}>
 
                     </div>
-                    <div className={`bg-[#000] absolute bottom-0 left-0 w-full h-[${cropSize}px] z-10`}>
+                    <div className={`bg-[#000] absolute bottom-0 left-0 w-full h-[${cropSize}px] z-[3]`}>
 
                     </div>
                     {posterHidden ? <>
                     
-                        <div className={`bg-brand h-[30px] absolute bottom-0 left-0 w-full flex justify-center items-center z-10`}>
+                        <div className={`bg-brand h-[30px] absolute bottom-0 left-0 w-full flex justify-center items-center z-[3]`}>
                             <div onClick={() => showWindow2()} className='h-[6px] bg-[#dbdbdb] mx-[20px] w-full rounded-full cursor-pointer hover:bg-[#c4c4c4] transition'>
 
                             </div>
