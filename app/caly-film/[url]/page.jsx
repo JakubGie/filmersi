@@ -132,9 +132,9 @@ export default async function FullMovie({params}) {
                                 </div>
                             </div>*/}
                             <div className="font-semibold justify-center flex">
-                                <p>Oglądaj {movieInfo.tytul} Cały Film Online na:</p>
+                                <p>Oglądaj {movieInfo.tytul} Cały Film Online po obejrzeniu traileru</p>
                             </div>
-                            {/*<WatchSources tmdbid={movieInfo.tmdbid} typ="movie" />*/}
+                            {/*<WatchSources tmdbid={movieInfo.tmdbid} typ="movie" />
                             <div>
 
                                 <a href="/rejestracja/find-vod" rel="nofollow" className="bg-black border-2 border-brand flex justify-between text-white font-semibold  rounded-lg items-center px-5 flex-col sm:flex-row py-5 sm:py-0 gap-3 sm:gap-0">
@@ -145,7 +145,7 @@ export default async function FullMovie({params}) {
                                     Zarejestruj się
                                 </a>
                                 
-                            </div>
+                            </div>*/}
                             {/* <RegisterWindow/> */}
                         </div>
                     </div>

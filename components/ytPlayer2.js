@@ -78,7 +78,6 @@ const YtPlayer2 = (params) => {
    
     const _onReady = (event) => {
         setVideoElement(event)
-        console.log("Player ready")
         setIsLoading(false)
         setIsPlaying(false)
 
@@ -92,6 +91,7 @@ const YtPlayer2 = (params) => {
        }
 
        function showWindow2() {
+        videoElement.target.stopVideo()
         setPosterHidden(false)
         setShonw(true)
        }
