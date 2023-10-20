@@ -40,7 +40,7 @@ const YtPlayer2 = (params) => {
         setCropSize(60)
     }
     else if(windowSize.current[0]>350) {
-        setPlayerWidth(400)
+        setPlayerWidth("100%")
         setPlayerHeight(270)
         setCropSize(60)
     }
@@ -128,8 +128,8 @@ const YtPlayer2 = (params) => {
             </> : <>
             
             
-            <div className="flex relative rounded-2xl overflow-hidden bg-[#000]">
-                    <YouTube videoId={params.id !== "" ? params.id : "eOrNdBpGMv8"} onReady={_onReady} opts={opts} className={`rounded-2xl w-[${playerWidth}px] lg:h-[${playerHeight}px] "`}/>
+            <div className="flex relative w-full sm:w-auto rounded-2xl overflow-hidden bg-[#000]">
+                    <YouTube videoId={params.id !== "" ? params.id : "eOrNdBpGMv8"} onReady={_onReady} opts={opts} className={`rounded-2xl ${playerWidth === "100%" ? `w-full` : `w-[${playerWidth}px]`} lg:h-[${playerHeight}px] "`}/>
                     <div className={`bg-[#000] absolute top-0 left-0 w-full h-[${cropSize}px] z-[3]`}>
 
                     </div>
