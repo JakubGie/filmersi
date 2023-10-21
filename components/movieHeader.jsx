@@ -16,6 +16,12 @@ const MovieHeader = (props) => {
                 />
             </Link>
 
+            <div className="mt-4 flex gap-3 flex-col lg:flex-row">
+                {props.version !== "full-movie" && props.version !== "all-parts" ? <Link href={`/${props.movieInfo.typ === "Film" ? "caly-film" : "wszystkie-odcinki" }/${props.movieInfo.url}`} className="flex sm:hidden bg-red-600 px-5 py-2 text-lg  rounded-full font-bold  gap-2 items-center w-full lg:w-56 justify-center uppercase hover:bg-white hover:text-red-600 transition">
+                    <FaPlay/> Oglądaj online
+                </Link> : <></>}
+                </div>
+
             <div className="mt-8 lg:mt-8 flex flex-col gap-3">
                 <Link href={`/${props.version === "full-movie" ? "caly-film" : ""}${props.version === "all-parts" ? "wszystkie-odcinki" : ""}${props.version !== "all-parts" & props.version !== 'full-movie' ? props.movieInfo.typ.toLowerCase() : ""}/${props.movieInfo.url}`}>
 
@@ -42,7 +48,7 @@ const MovieHeader = (props) => {
                    
                 </Link>
                 <div className="mt-4 flex gap-3 flex-col lg:flex-row">
-                {props.version !== "full-movie" && props.version !== "all-parts" ? <Link href={`/${props.movieInfo.typ === "Film" ? "caly-film" : "wszystkie-odcinki" }/${props.movieInfo.url}`} className="bg-red-600 px-5 py-2 text-lg inline-block rounded-full font-bold flex gap-2 items-center w-full lg:w-56 justify-center uppercase hover:bg-white hover:text-red-600 transition">
+                {props.version !== "full-movie" && props.version !== "all-parts" ? <Link href={`/${props.movieInfo.typ === "Film" ? "caly-film" : "wszystkie-odcinki" }/${props.movieInfo.url}`} className="hidden sm:flex bg-red-600 px-5 py-2 text-lg  rounded-full font-bold  gap-2 items-center w-full lg:w-56 justify-center uppercase hover:bg-white hover:text-red-600 transition">
                     <FaPlay/> Oglądaj online
                 </Link> : <></>}
 

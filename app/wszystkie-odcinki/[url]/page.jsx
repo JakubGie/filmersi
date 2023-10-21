@@ -140,10 +140,10 @@ export default async function AllParts({params}) {
                                 </div>
                             </div>*/}
                             <div className="font-semibold justify-center flex">
-                                <p>Oglądaj {movieInfo.tytul} Wszystkie Odcinki Online na:</p>
+                                <p>Oglądaj {movieInfo.tytul} Wszystkie Odcinki Online Online po obejrzeniu traileru</p>
                             </div>
                             {/*<WatchSources tmdbid={movieInfo.tmdbid} typ="movie" />*/}
-                            <div>
+                            {/*<div>
 
                                 <a href="/rejestracja/find-vod" rel="nofollow" className="bg-black border-2 border-brand flex justify-between text-white font-semibold  rounded-lg items-center px-5 flex-col sm:flex-row py-5 sm:py-0 gap-3 sm:gap-0">
                                     <FaLock className="text-[50px] sm:text-[150px]"/>

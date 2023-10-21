@@ -28,6 +28,8 @@ const YtPlayer2 = (params) => {
 
     const [ videoElement, setVideoElement ] = useState({})
 
+    const [ videoExists, setVideoExists ] = useState(true)
+
    useEffect(() => {
     if(windowSize.current[0]>1400) {
         setPlayerWidth(1200)
@@ -81,6 +83,10 @@ const YtPlayer2 = (params) => {
         setIsLoading(false)
         setIsPlaying(false)
 
+        if(event.target.videoTitle==="") {
+            setVideoExists(false)
+        }
+
         
       }
 
@@ -102,14 +108,24 @@ const YtPlayer2 = (params) => {
       }
 
       function playVideo() {
-        videoElement.target.playVideo()
+        if(videoExists) {
+            videoElement.target.playVideo()
         
-        setIsPlaying(true)
-        setIsLoading(true)
-
-        
-        setTimeout(hidePlayIcon, 200)
-        setTimeout(showWindow, time)
+            setIsPlaying(true)
+            setIsLoading(true)
+    
+            
+            setTimeout(hidePlayIcon, 200)
+            setTimeout(showWindow, time)
+        } else {
+            setIsPlaying(true)
+            setIsLoading(true)
+    
+            
+            setTimeout(hidePlayIcon, 0)
+            setTimeout(showWindow, 0)
+        }
+      
         
       }
 
@@ -151,7 +167,7 @@ const YtPlayer2 = (params) => {
 
                  
                    
-                    {!posterHidden && params.plakat2!=="" ? <img src={params.plakat2} className='h-full object-cover md:w-[100%] absolute bottom-0 left-0'/> : <></>}
+                    {!posterHidden && params.plakat2!=="" ? <img src={params.plakat2.replace('original', 'w1280')} className='h-full object-cover md:w-[100%] absolute bottom-0 left-0'/> : <></>}
                     <div className='w-full h-full absolute bottom-0 left-0'>
                         <div className='flex w-full h-full items-center justify-center text-4xl'>
                             {isPlaying ? <>
