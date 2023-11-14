@@ -20,12 +20,12 @@ export async function generateMetadata({params}) {
   const url = params.url
   const movies = await getMovies(url)
   return {
-    title: "Całe filmy "+url+" online - Top Lista",
-    description: "Przejrzyj top listę całych filmów z "+url+" roku i wybierz film do obejrzenia online.",
+    title: "Całe filmy "+url+" online - Oglądaj",
+    description: "Oglądaj całe filmy "+url+" online już teraz bez wychodzenia z domu.",
     openGraph: {
       images: [movies[0].plakat2],
-      title: "Popularne filmy z "+url+" roku online - Top Lista",
-      description: "Przejrzyj top listę całych filmów z "+url+" roku i wybierz film do obejrzenia online."
+      title: "Całe filmy "+url+" online - Oglądaj",
+      description: "Oglądaj całe filmy "+url+" online już teraz bez wychodzenia z domu."
     },
   }
 }
@@ -52,7 +52,7 @@ export default async function Year({params}) {
 
             <div className="container mx-auto px-5">
 
-                <HeaderWithText header={`Całe Filmy ${url} Online`} description={`Całe filmy z ${url} roku online`} />
+                <HeaderWithText header={`Całe Filmy ${url} Online - Oglądaj`} description={`Oglądaj całe filmy ${url} online już teraz bez wychodzenia z domu.`} />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
                     {movies.map((movie, index) => (
@@ -63,6 +63,24 @@ export default async function Year({params}) {
                             </>}
                         </>
                     ))}
+                </div>
+
+
+                <div className='flex gap-4 flex-col my-4 text-lg'>
+                  <p>
+                  Odkrywanie świata filmu to dla wielu pasja, która nieustannie nas zaskakuje. Rok {url} był dla kinematografii czasem niespotykanych wyzwań, ale również bogactwa form i treści, które teraz można odkrywać przez platformy oferujące filmy online. Miłośnicy wielkiego ekranu, którzy poszukują produkcji, odnajdą w internecie skarbnicę: <b>całe filmy {url}</b> do oglądania w zaciszu własnego domu.
+                  </p>
+                  <p>
+                  <b>Cale filmy {url}</b> online to nie tylko wygoda, ale też szansa na zapoznanie się z kulturą, która nieustannie się rozwija. Większość platform streamingowych zaoferowała swoim użytkownikom szeroki wybór, umożliwiając im odkrywanie, ocenianie i dzielenie się opiniami o filmach z różnych stron świata.
+                  </p>
+                  <p>Wśród pełnych wersji filmów z {url} roku, znajdujemy odwieczne walki dobra ze złem, poruszające historie miłosne, trzymające w napięciu kryminały oraz inspirujące biografie. Z każdym rokiem kinematografia rośnie w siłę, podnosząc wyniosłe poprzeczki technologii filmowej, narracji i głębi postaci, a całe filmy {url} są tego najlepszym przykładem.</p>
+
+                  <h2 className='text-2xl font-semibold'>Jak oglądać całe filmy {url} online?</h2>
+                  <ol className='pl-5'>
+                    <li>Wyszukaj film po tytule</li>
+                    <li><a href="/rejestracja/find-vod" className='underline'>Zarejestruj się</a></li>
+                    <li>Wybierz źródło oglądania całego filmu z {url} roku</li>
+                  </ol>
                 </div>
              
 
