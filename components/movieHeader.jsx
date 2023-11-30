@@ -25,7 +25,7 @@ const MovieHeader = (props) => {
             <div className="mt-8 lg:mt-8 flex flex-col gap-3">
                 <Link href={`/${props.version === "full-movie" ? "caly-film" : ""}${props.version === "all-parts" ? "wszystkie-odcinki" : ""}${props.version !== "all-parts" & props.version !== 'full-movie' ? props.movieInfo.typ.toLowerCase() : ""}/${props.movieInfo.url}`}>
 
-                    {props.fullVersion ? <h1 className={`text-3xl md:text-5xl font-bold  w-full`}>{props.movieInfo.tytul}{props.version === "full-movie" ? " Cały Film - Oglądaj Online" : ""}{props.version === "all-parts" ? " Wszystkie Odcinki - Oglądaj Online" : ""}</h1> : <h2 className={`text-3xl md:text-5xl font-bold lg:h-14  w-full lg:max-w-[700px] lg:truncate`}>{props.movieInfo.tytul}</h2>}
+                    {props.fullVersion ? <h1 className={`text-3xl md:text-5xl font-bold  w-full`}>{props.movieInfo.tytul}{props.version === "full-movie" && typeof props.platform === 'undefined' ? " Cały Film - Oglądaj Online" : ""}{props.version === "full-movie" && typeof props.platform !== 'undefined' ? ` ${props.platform} - Obejrzyj Cały Film Online` : ""}{props.version === "all-parts" ? " Wszystkie Odcinki - Oglądaj Online" : ""}</h1> : <h2 className={`text-3xl md:text-5xl font-bold lg:h-14  w-full lg:max-w-[700px] lg:truncate`}>{props.movieInfo.tytul}</h2>}
                     
                 </Link>
 

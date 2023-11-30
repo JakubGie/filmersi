@@ -3,16 +3,11 @@ import MovieHeader from "@/components/movieHeader"
 import Link from "next/link"
 import SimilarButton from "@/components/elements/similarButton"
 import DataWindow from "@/components/dataWindow"
-import Image from "next/image"
 import MovieWindow from "@/components/movieWindow"
 
 
 import Footer from "@/components/footer"
-import WatchSources from "@/components/watchSources"
-import YtPlayer from "@/components/ytPlayer"
-import { FaLock } from "react-icons/fa"
 import YtPlayer2 from "@/components/ytPlayer2"
-import RegisterWindow from "@/components/registerWindow"
 
 async function getMovieInfo(url) {
     const res = await fetch('https://api.filmer.wkbdhkmuzv.cfolks.pl/movieInfoUrl/'+url, { cache: 'no-store' })
@@ -43,17 +38,55 @@ async function getCountries(countries) {
   }
 
 
+  async function getPlatform(urlPlatform, movieInfo) {
+    switch (urlPlatform) {
+        case 'cda':
+          var platform = "CDA"
+
+          break;
+        case 'vider':
+            var platform = "Vider"
+          break;
+        case 'filman':
+            var platform = "Filman"
+          break;
+        case 'zalukaj':
+            var platform = "Zalukaj"
+            break;
+        case 'vod':
+            var platform = "VOD"
+            break;
+    }
+
+    if(movieInfo[0].seotytul!=="") {
+        var tytul2 = movieInfo[0].seotytul
+    } else {
+        var tytul2 = movieInfo[0].tytul
+    }
+
+    var desc = "<p>W dzisiejszych czasach miłośnicy kinematografii mają niepowtarzalną możliwość korzystania z różnorodnych platform streamingowych oferujących szeroki zakres filmów na wyciągnięcie ręki. Dzięki źródłom, takim jak <b>"+movieInfo[0].tytul+" "+platform+"</b>, możesz cieszyć się filmowymi produkcjami bez wychodzenia z domu, z zachowaniem najwyższych standardów jakości HD (720p), Full HD (1080p) i bezpieczeństwa.</p><p>Cyfrowa rewolucja zmieniła sposób oglądania filmów. "+platform+" to przykład serwisu, który umożliwia dostęp do filmów bez ograniczeń czasowych i terytorialnych. Znaczenie elastyczności w dzisiejszych czasach jest nieocenione – wybierając "+tytul2+" "+platform+" Cały Film, wybieramy jakość i komfort.</p><p>Z usług, takich jak <b>"+platform+"</b>, korzystają szczególnie ci, którzy chcą być na bieżąco z produkcjami filmowymi. Premierowe tytuły dostępne zaledwie po kilku tygodniach od oficjalnego wydania to standard, do którego użytkownicy są już przyzwyczajeni. Jakość obrazu i dźwięku dorównuje tym z tradycyjnych kin, a często jest nawet lepsza dzięki zaawansowanej technologii streamingowej.</p><h2>Dlaczego warto obejrzeć film "+tytul2+" na platformie "+platform+"?</h2><p>Oglądając "+movieInfo[0].tytul+" z "+movieInfo[0].rok_produkcji+" roku na legalnej platformie, możemy być spokojni o aspekty prawne i bezpieczeństwo naszych danych. Legalne serwisy dbają o ochronę praw autorskich oraz prywatność swoich użytkowników.</p><p>Wybierając serwis do oglądania filmów online, liczy się różnorodność. Platformy takie jak "+platform+" często aktualizują swoją ofertę filmową, zapewniając użytkownikom dostęp do najnowszych hitów oraz klasyków kinematografii.</p><p>Dostępność funkcji takich jak wyszukiwanie, filtrowanie zawartości czy kategorie filmów znacznie ułatwia korzystanie z platformy. Prostota w nawigacji jest kluczowa dla pozytywnego doświadczenia online.</p>"
+
+    return {name: platform, desc: desc}
+  }
 
   export async function generateMetadata({params}) {
     var movieInfo = await getMovieInfo(params.url)
+    var platform = await getPlatform(params.platform, movieInfo)
     movieInfo = movieInfo[0]
+
+   
+
+    
+    
+
+    
     return {
-      title: movieInfo.tytul+" Cały Film - Oglądaj Online",
-      description: movieInfo.kraj.includes("|3|") ? "Obejrzyj cały film "+movieInfo.tytul+" z "+movieInfo.rok_produkcji+" roku online bez wychodzenia z domu." : "Obejrzyj cały film "+movieInfo.tytul+" z "+movieInfo.rok_produkcji+" (Lektor PL, Dubbing) roku online bez wychodzenia z domu.",
+      title: movieInfo.tytul+" "+platform.name+" - Obejrzyj Cały Film Online",
+      description: movieInfo.kraj.includes("|3|") ? "Obejrzyj cały film "+movieInfo.tytul+" na platformie "+platform.name+", online bez wychodzenia z domu." : "Obejrzyj cały film "+movieInfo.tytul+" "+platform.name+" (Lektor PL, Dubbing) online bez wychodzenia z domu.",
       openGraph: {
         images: [movieInfo.plakat2],
-        title: movieInfo.tytul+" ("+movieInfo.rok_produkcji+") - Oglądaj Online",
-        description: movieInfo.kraj.includes("|3|") ? "Obejrzyj cały film "+movieInfo.tytul+" z "+movieInfo.rok_produkcji+" roku online bez wychodzenia z domu." : "Obejrzyj cały film "+movieInfo.tytul+" z "+movieInfo.rok_produkcji+" (Lektor PL, Dubbing) roku online bez wychodzenia z domu.",
+        title: movieInfo.tytul+" ("+movieInfo.rok_produkcji+") - Obejrzyj Cały Film Online",
+        description: movieInfo.kraj.includes("|3|") ? "Obejrzyj cały film "+movieInfo.tytul+" na platformie "+platform.name+", online bez wychodzenia z domu." : "Obejrzyj cały film "+movieInfo.tytul+" "+platform.name+" (Lektor PL, Dubbing) online bez wychodzenia z domu.",
         type:"video.movie"
       },
     }
@@ -72,8 +105,11 @@ async function getCountries(countries) {
   }
 
 
+
+
 export default async function FullMovie({params}) {
     var movieInfo = await getMovieInfo(params.url)
+    var platform = await getPlatform(params.platform, movieInfo)
     movieInfo = movieInfo[0]
 
 
@@ -120,37 +156,19 @@ export default async function FullMovie({params}) {
                     
                     <div className="flex items-center justify-center">
                         <div className="lg:w-[550px] text-lg flex gap-3 justify-start uppercase font-light flex-col pt-6">
-                            {/*<div className="flex gap-2 justify-center text-sm lg:text-lg items-center">
-                                Dostępne dzięki 
-                                <div className="w-[160px] h-[23px] shrink-0  relative content-between bg-none">
-                                    <Image
-                                        alt={`JustWatch Logo`}
-                                        src={'/justwatch.png'}
-                                        layout='fill'
-                                        objectFit='contain'
-                                    />
-                                </div>
-                            </div>*/}
+                            
                             <div className="font-semibold justify-center flex">
-                                <p>Oglądaj {movieInfo.tytul} Cały Film Online po obejrzeniu traileru</p>
+                                <p>Obejrzyj {movieInfo.tytul} {platform.name}  Cały Film Online po obejrzeniu traileru</p>
                             </div>
-                            {/*<WatchSources tmdbid={movieInfo.tmdbid} typ="movie" />
-                            <div>
-
-                                <a href="/rejestracja/find-vod" rel="nofollow" className="bg-black border-2 border-brand flex justify-between text-white font-semibold  rounded-lg items-center px-5 flex-col sm:flex-row py-5 sm:py-0 gap-3 sm:gap-0">
-                                    <FaLock className="text-[50px] sm:text-[150px]"/>
-                                    <p className="pl-4">Dostęp do źródeł oglądania tylko dla zarejestrowanych użytkowników Find Vod</p>
-                                </a>
-                                <a href="/rejestracja/find-vod" className="bg-brand font-bold w-full mt-3 text-center py-2 flex  items-center justify-center rounded-full text-2xl px-4 hover:bg-white hover:text-black transition" rel="nofollow">
-                                    Zarejestruj się
-                                </a>
-                                
-                            </div>*/}
-                            {/* <RegisterWindow/> */}
+                          
                         </div>
                     </div>
 
-                    <MovieHeader version="full-movie" movieInfo={movieInfo} fullVersion={true} />
+                    <div className="additional-info bg-white rounded-lg text-black mt-8 px-5 py-5" dangerouslySetInnerHTML={{ __html: platform.desc }}>
+                        
+                    </div>
+
+                    <MovieHeader version="full-movie" platform={platform.name} movieInfo={movieInfo} fullVersion={true} />
 
                     <div className="flex flex-col gap-7 py-6">
                         <SimilarButton typ={movieInfo.typ} url={movieInfo.url} tytul={movieInfo.tytul} rok_produkcji={movieInfo.rok_produkcji} />
@@ -189,11 +207,7 @@ export default async function FullMovie({params}) {
                     </div>
 
                    
-                    {movieInfo.ai !== "" ? <>
-                        <div className="additional-info bg-white rounded-lg text-black px-5 py-5" dangerouslySetInnerHTML={{ __html: movieInfo.ai }}>
-                            
-                        </div>
-                    </> : <></>}
+                  
 
                     {movieInfo.seria!==0 ? <>
                             

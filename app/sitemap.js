@@ -72,6 +72,31 @@ export default async function sitemap() {
     lastModified: new Date().toISOString()
   }));
 
+  const calyFilmCda = movies.map((route) => ({
+    url: `${URL}/caly-film/${route.url}/cda`,
+    lastModified: new Date().toISOString()
+  }));
+
+  const calyFilmVider = movies.map((route) => ({
+    url: `${URL}/caly-film/${route.url}/vider`,
+    lastModified: new Date().toISOString()
+  }));
+
+  const calyFilmFilman = movies.map((route) => ({
+    url: `${URL}/caly-film/${route.url}/filman`,
+    lastModified: new Date().toISOString()
+  }));
+
+  const calyFilmZalukaj = movies.map((route) => ({
+    url: `${URL}/caly-film/${route.url}/zalukaj`,
+    lastModified: new Date().toISOString()
+  }));
+
+  const calyFilmVod = movies.map((route) => ({
+    url: `${URL}/caly-film/${route.url}/vod`,
+    lastModified: new Date().toISOString()
+  }));
+
   const serial = tv.map((route) => ({
     url: `${URL}/serial/${route.url}`,
     lastModified: new Date().toISOString()
@@ -151,5 +176,5 @@ export default async function sitemap() {
   }));
 
  
-  return [...routes, ...calyFilm, ...posty, ...wszystkieOdcinki, ...seria, ...podobneFilmy, ...filmyRok, ...serialeRok, ...film, ...serial, ...podobneSeriale, ...filmyGatunek, ...serialeGatunek, ...filmyKraj, ...serialeKraj, ...postyU];
+  return [...routes, ...calyFilm, ...calyFilmCda, ...calyFilmVider, ...calyFilmFilman, ...calyFilmZalukaj, ...calyFilmVod, ...posty, ...wszystkieOdcinki, ...seria, ...podobneFilmy, ...filmyRok, ...serialeRok, ...film, ...serial, ...podobneSeriale, ...filmyGatunek, ...serialeGatunek, ...filmyKraj, ...serialeKraj, ...postyU];
 }
